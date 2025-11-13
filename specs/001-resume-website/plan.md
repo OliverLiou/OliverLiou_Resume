@@ -72,8 +72,11 @@ app/
 ├── assets/
 │   ├── css/
 │   │   └── main.css           # 全域樣式 (已存在)
-│   └── images/
-│       └── ProfilePicture.jpg # 個人頭像
+│   └── images/                # 靜態圖片資源
+│       ├── ProfilePicture.jpg # 個人頭像
+│       ├── HCMF_Logo_White.png   # 公司 logo (dark mode)
+│       ├── HCMF_Logo_Black.png   # 公司 logo (light mode)
+│       └── MUST_LOGO.png         # 學校校徽
 └── app.vue                    # 根元件 (已存在，需組合 Header/Footer/page)
 
 i18n/
@@ -82,11 +85,6 @@ i18n/
     └── en.json                # 英文語系檔
 
 public/
-├── assets/
-│   └── images/
-│       ├── HCMF_Logo_White.png   # 公司 logo (dark mode)
-│       ├── HCMF_Logo_Black.png   # 公司 logo (light mode)
-│       └── MUST_LOGO.png         # 學校校徽
 └── robots.txt                 # 已存在
 ```
 
