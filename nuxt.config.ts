@@ -11,6 +11,10 @@ export default defineNuxtConfig({
     ],
   },
   i18n: {
-    
+    defaultLocale: 'zh-tw',
+    locales: [
+      { code: 'zh-tw', name: '繁體中文' },
+      { code: 'en', name: 'English' }
+    ]
   }
 })
