@@ -1,34 +1,3 @@
-<script setup lang="ts">
-import { useResumeStore } from '~/stores/resume'
-import type { SkillItem, TreeNode } from '~/types/resume'
-
-const { t } = useI18n()
-const resumeStore = useResumeStore()
-
-const skills = computed(() => resumeStore.skills)
-
-// Convert SkillItem[] to UTree format
-const convertToTreeNodes = (items: SkillItem[]): TreeNode[] => {
-  return items.map(item => ({
-    label: item.name,
-    icon: item.icon,
-    children: item.children ? convertToTreeNodes(item.children) : undefined,
-  }))
-}
-
-const backendSkills = computed(() => 
-  skills.value?.backend ? convertToTreeNodes(skills.value.backend) : []
-)
-
-const frontendSkills = computed(() => 
-  skills.value?.frontend ? convertToTreeNodes(skills.value.frontend) : []
-)
-
-const othersSkills = computed(() => 
-  skills.value?.others ? convertToTreeNodes(skills.value.others) : []
-)
-</script>
-
 <template>
   <section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
@@ -62,3 +31,34 @@ const othersSkills = computed(() =>
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { useResumeStore } from '~/stores/resume'
+import type { SkillItem, TreeNode } from '~/types/resume'
+
+const { t } = useI18n()
+const resumeStore = useResumeStore()
+
+const skills = computed(() => resumeStore.skills)
+
+// Convert SkillItem[] to UTree format
+const convertToTreeNodes = (items: SkillItem[]): TreeNode[] => {
+  return items.map(item => ({
+    label: item.name,
+    icon: item.icon,
+    children: item.children ? convertToTreeNodes(item.children) : undefined,
+  }))
+}
+
+const backendSkills = computed(() => 
+  skills.value?.backend ? convertToTreeNodes(skills.value.backend) : []
+)
+
+const frontendSkills = computed(() => 
+  skills.value?.frontend ? convertToTreeNodes(skills.value.frontend) : []
+)
+
+const othersSkills = computed(() => 
+  skills.value?.others ? convertToTreeNodes(skills.value.others) : []
+)
+</script>

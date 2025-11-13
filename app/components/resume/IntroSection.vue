@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import { useResumeStore } from '~/stores/resume'
-
-const { t } = useI18n()
-const resumeStore = useResumeStore()
-
-const profile = computed(() => resumeStore.profile)
-</script>
-
 <template>
   <section id="about" class="py-16">
     <div class="container mx-auto px-4">
@@ -68,3 +59,12 @@ const profile = computed(() => resumeStore.profile)
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { useResumeStore } from '~/stores/resume'
+
+const { t } = useI18n()
+const resumeStore = useResumeStore()
+
+const profile = computed(() => resumeStore.profile)
+</script>

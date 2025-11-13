@@ -1,58 +1,3 @@
-<script setup lang="ts">
-const { t, locale } = useI18n()
-const colorMode = useColorMode()
-
-// Mobile menu state
-const isMenuOpen = ref(false)
-
-// Navigation items
-const navItems = [
-  { key: 'intro', label: 'nav.intro', href: '#about' },
-  { key: 'skills', label: 'nav.skills', href: '#skills' },
-]
-
-// Language options
-const languages = [
-  { code: 'zh-tw', label: 'language.zh-tw' },
-  { code: 'en', label: 'language.en' },
-]
-
-// Theme options
-const themes = [
-  { value: 'light', label: 'theme.light', icon: 'i-heroicons-sun' },
-  { value: 'dark', label: 'theme.dark', icon: 'i-heroicons-moon' },
-  { value: 'system', label: 'theme.system', icon: 'i-heroicons-computer-desktop' },
-]
-
-// Smooth scroll to anchor
-const scrollToSection = (href: string) => {
-  const element = document.querySelector(href)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-    isMenuOpen.value = false
-  }
-}
-
-// Handle language change
-const changeLanguage = (code: string) => {
-  locale.value = code
-  localStorage.setItem('locale', code)
-}
-
-// Handle theme change
-const changeTheme = (theme: string) => {
-  colorMode.preference = theme
-}
-
-// Initialize preferences
-onMounted(() => {
-  const savedLocale = localStorage.getItem('locale')
-  if (savedLocale) {
-    locale.value = savedLocale
-  }
-})
-</script>
-
 <template>
   <header class="sticky top-0 z-50 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-4">
@@ -160,3 +105,58 @@ onMounted(() => {
     </div>
   </header>
 </template>
+
+<script setup lang="ts">
+const { t, locale } = useI18n()
+const colorMode = useColorMode()
+
+// Mobile menu state
+const isMenuOpen = ref(false)
+
+// Navigation items
+const navItems = [
+  { key: 'intro', label: 'nav.intro', href: '#about' },
+  { key: 'skills', label: 'nav.skills', href: '#skills' },
+]
+
+// Language options
+const languages = [
+  { code: 'zh-tw', label: 'language.zh-tw' },
+  { code: 'en', label: 'language.en' },
+]
+
+// Theme options
+const themes = [
+  { value: 'light', label: 'theme.light', icon: 'i-heroicons-sun' },
+  { value: 'dark', label: 'theme.dark', icon: 'i-heroicons-moon' },
+  { value: 'system', label: 'theme.system', icon: 'i-heroicons-computer-desktop' },
+]
+
+// Smooth scroll to anchor
+const scrollToSection = (href: string) => {
+  const element = document.querySelector(href)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+    isMenuOpen.value = false
+  }
+}
+
+// Handle language change
+const changeLanguage = (code: string) => {
+  locale.value = code
+  localStorage.setItem('locale', code)
+}
+
+// Handle theme change
+const changeTheme = (theme: string) => {
+  colorMode.preference = theme
+}
+
+// Initialize preferences
+onMounted(() => {
+  const savedLocale = localStorage.getItem('locale')
+  if (savedLocale) {
+    locale.value = savedLocale
+  }
+})
+</script>

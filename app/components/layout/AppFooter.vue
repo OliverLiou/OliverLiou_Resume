@@ -1,34 +1,3 @@
-<script setup lang="ts">
-import { useResumeStore } from '~/stores/resume'
-
-const { t } = useI18n()
-const resumeStore = useResumeStore()
-
-const profile = computed(() => resumeStore.profile)
-const currentYear = new Date().getFullYear()
-
-const socialLinks = computed(() => [
-  {
-    name: 'Email',
-    icon: 'i-heroicons-envelope',
-    href: `mailto:${profile.value?.contacts.email}`,
-    label: profile.value?.contacts.email,
-  },
-  {
-    name: 'GitHub',
-    icon: 'i-heroicons-code-bracket',
-    href: profile.value?.contacts.github,
-    label: 'GitHub',
-  },
-  {
-    name: 'LinkedIn',
-    icon: 'i-heroicons-briefcase',
-    href: profile.value?.contacts.linkedin,
-    label: 'LinkedIn',
-  },
-])
-</script>
-
 <template>
   <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-8">
     <div class="container mx-auto px-4">
@@ -62,3 +31,34 @@ const socialLinks = computed(() => [
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+import { useResumeStore } from '~/stores/resume'
+
+const { t } = useI18n()
+const resumeStore = useResumeStore()
+
+const profile = computed(() => resumeStore.profile)
+const currentYear = new Date().getFullYear()
+
+const socialLinks = computed(() => [
+  {
+    name: 'Email',
+    icon: 'i-heroicons-envelope',
+    href: `mailto:${profile.value?.contacts.email}`,
+    label: profile.value?.contacts.email,
+  },
+  {
+    name: 'GitHub',
+    icon: 'i-heroicons-code-bracket',
+    href: profile.value?.contacts.github,
+    label: 'GitHub',
+  },
+  {
+    name: 'LinkedIn',
+    icon: 'i-heroicons-briefcase',
+    href: profile.value?.contacts.linkedin,
+    label: 'LinkedIn',
+  },
+])
+</script>

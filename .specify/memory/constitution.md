@@ -109,10 +109,38 @@ Follow-up TODOs: None
 5. **人工驗證**: 由人類開發者驗證功能（無自動化測試）
 6. **規範提交**: 使用 Conventional Commits 格式提交變更
 
+### Vue Component Structure
+
+所有 Vue 單檔元件（.vue）必須遵循以下結構順序：
+
+1. **Template 區塊**（置於最上方）
+2. **Script 區塊**（置於 template 之下）
+3. **Style 區塊**（如需要，置於最下方）
+
+**範例**:
+```vue
+<template>
+  <div>
+    <!-- HTML 內容 -->
+  </div>
+</template>
+
+<script setup lang="ts">
+// TypeScript 程式碼
+</script>
+
+<style scoped>
+/* CSS 樣式（如需要） */
+</style>
+```
+
+**Rationale**: 遵循 Vue 官方建議的元件結構，template 優先可讓開發者快速理解元件的視覺結構，提升程式碼可讀性。
+
 ### Code Review Checklist
 
 - [ ] 未修改現有設定檔和程式碼（除非授權）
 - [ ] 遵循 Nuxt 4.x 和 Nuxt UI 4.x 規範
+- [ ] Vue 元件結構正確（template 在上，script 在下）
 - [ ] 未自行安裝新套件
 - [ ] 已查閱 Context7 相關文件
 - [ ] 優先使用 Nuxt UI 元件
