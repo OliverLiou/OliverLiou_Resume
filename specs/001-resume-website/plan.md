@@ -13,7 +13,7 @@
 
 **Language/Version**: TypeScript 5.9.3+ / Vue 3.5.22+ / Nuxt 4.2.1+  
 **Primary Dependencies**: @nuxt/ui 4.1.0+, @nuxt/icon 2.1.0+, @nuxtjs/i18n 10.2.0+, Pinia 3.0.4+, Tailwind CSS 4.1.17+  
-**Storage**: Static content stored as TypeScript constants in Pinia stores, images in `/public/assets/images/`  
+**Storage**: Static content stored as TypeScript constants in Pinia stores, images in `app/assets/images/`  
 **Testing**: N/A (No-Testing Policy per Constitution)  
 **Target Platform**: Static Site Generation (SSG) for GitHub Pages deployment  
 **Project Type**: Web application (frontend-only)  
@@ -88,7 +88,7 @@ public/
 └── robots.txt                 # 已存在
 ```
 
-**Structure Decision**: 採用 Nuxt 4.x 標準 Web 應用程式結構。所有元件置於 `app/components/` 並按功能分類 (layout vs resume)。使用 Pinia store 管理履歷資料，支援未來擴展為動態內容。靜態資源 (圖片、logo) 放置於 `public/assets/images/` 以支援 SSG 部署。
+**Structure Decision**: 採用 Nuxt 4.x 標準 Web 應用程式結構。所有元件置於 `app/components/` 並按功能分類 (layout vs resume)。使用 Pinia store 管理履歷資料，支援未來擴展為動態內容。靜態資源 (圖片、logo) 放置於 `app/assets/images/` 以支援 SSG 部署。
 
 ## Complexity Tracking
 

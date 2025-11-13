@@ -123,7 +123,6 @@
 - **FR-016**: 工作經歷、專案經驗和教育背景 MUST 按時間倒序排列（最新的在最上方）
 - **FR-017**: 履歷資料（個人資料、技能、工作經歷、專案、教育背景）MUST 以 JSON 或 TypeScript 檔案格式在程式碼中定義
 - **FR-018**: 網站 MUST 包含 SEO 優化元素，包括適當的 meta tags（title、description、keywords）、Open Graph tags 和 sitemap.xml
-- **FR-019**: 網站 MUST 整合訪客分析追蹤工具（如 Google Analytics），以追蹤訪客來源和行為數據
 
 ### Key Entities
 
@@ -155,7 +154,7 @@
 - Q: 履歷資料的管理方式 - 履歷內容（個人資料、工作經歷、專案、技能等）需要如何更新和管理？ → A: 在程式碼中直接定義（JSON/TypeScript 檔案），更新需要修改程式碼並重新部署
 - Q: 主題和語言切換控制項的位置 - 主題切換（深色/淺色模式）和語言切換按鈕應該放在網站的哪個位置？ → A: 在 Header 右上角區域（與導航選單並列或在其旁邊）
 - Q: 手機版漢堡選單的展開行為 - 在手機版本中，當訪客點擊漢堡選單展開並選擇一個導航項目後，選單應該如何處理？ → A: 自動收合選單並滾動到目標區塊
-- Q: SEO 和分析追蹤需求 - 個人履歷網站是否需要搜尋引擎優化（SEO）和訪客分析追蹤功能？ → A: 需要基本 SEO（meta tags、Open Graph、sitemap）和分析追蹤（如 Google Analytics）
+- Q: SEO 需求 - 個人履歷網站是否需要搜尋引擎優化（SEO）功能？ → A: 需要基本 SEO（meta tags、Open Graph、sitemap）
 - Q: 圖片載入策略 - 對於頁面中的圖片（個人照片、公司 logo 等），應該採用什麼載入策略？ → A: 所有圖片以靜態檔案放置，不需要特別載入策略
 
 ## Assumptions
