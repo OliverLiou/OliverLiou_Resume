@@ -53,26 +53,26 @@
 
 ### Layout Components
 
-- [ ] T010 [P] [US1] 在 `app/components/layout/AppHeader.vue` 建立 Header 元件，包含網站標題、導航選單、語言切換和主題切換按鈕
-- [ ] T011 [P] [US1] 在 `app/components/layout/AppFooter.vue` 建立 Footer 元件，包含版權資訊和社群連結（Email、GitHub、LinkedIn）
-- [ ] T012 [US1] 在 `app/components/layout/AppHeader.vue` 實作錨點平滑滾動功能（scrollTo）
-- [ ] T013 [US1] 在 `app/components/layout/AppHeader.vue` 實作響應式漢堡選單（手機版）
+- [x] T010 [P] [US1] 在 `app/components/layout/AppHeader.vue` 建立 Header 元件，包含網站標題、導航選單、語言切換和主題切換按鈕
+- [x] T011 [P] [US1] 在 `app/components/layout/AppFooter.vue` 建立 Footer 元件，包含版權資訊和社群連結（Email、GitHub、LinkedIn）
+- [x] T012 [US1] 在 `app/components/layout/AppHeader.vue` 實作錨點平滑滾動功能（scrollTo）
+- [x] T013 [US1] 在 `app/components/layout/AppHeader.vue` 實作響應式漢堡選單（手機版）
 
 ### Resume Sections for US1
 
-- [ ] T014 [P] [US1] 在 `app/components/resume/IntroSection.vue` 建立自我介紹區塊，顯示頭像（使用 img 標籤）、姓名、職稱和簡介
-- [ ] T015 [P] [US1] 在 `app/components/resume/SkillsSection.vue` 建立技能清單區塊，使用三個 UTree 元件分別顯示後端、前端、其他技能（size="xl"）
+- [x] T014 [P] [US1] 在 `app/components/resume/IntroSection.vue` 建立自我介紹區塊，顯示頭像（使用 img 標籤）、姓名、職稱和簡介
+- [x] T015 [P] [US1] 在 `app/components/resume/SkillsSection.vue` 建立技能清單區塊，使用三個 UTree 元件分別顯示後端、前端、其他技能（size="xl"）
 
 ### Page Integration
 
-- [ ] T016 [US1] 在 `app/pages/index.vue` 整合 AppHeader、IntroSection、SkillsSection 和 AppFooter 元件
-- [ ] T017 [US1] 在 `app/pages/index.vue` 加入區塊錨點 id（about, skills）以支援導航跳轉
+- [x] T016 [US1] 在 `app/pages/index.vue` 整合 AppHeader、IntroSection、SkillsSection 和 AppFooter 元件
+- [x] T017 [US1] 在 `app/pages/index.vue` 加入區塊錨點 id（about, skills）以支援導航跳轉
 
 ### Styling & Responsiveness (US1 Focus)
 
-- [ ] T018 [US1] 為 AppHeader 實作響應式樣式（桌面完整導航 vs 手機漢堡選單）
-- [ ] T019 [US1] 為 IntroSection 實作響應式樣式（mobile: 單欄，desktop: 左右排列）
-- [ ] T020 [US1] 為 SkillsSection 實作響應式樣式（mobile: 單欄，tablet: 雙欄，desktop: 三欄）
+- [x] T018 [US1] 為 AppHeader 實作響應式樣式（桌面完整導航 vs 手機漢堡選單）
+- [x] T019 [US1] 為 IntroSection 實作響應式樣式（mobile: 單欄，desktop: 左右排列）
+- [x] T020 [US1] 為 SkillsSection 實作響應式樣式（mobile: 單欄，tablet: 雙欄，desktop: 三欄）
 
 **Checkpoint**: User Story 1 完成 - 基本履歷資訊可完整瀏覽，導航、語言切換、主題切換功能正常運作
 
