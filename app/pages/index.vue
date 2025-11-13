@@ -5,6 +5,9 @@
     <main>
       <IntroSection />
       <SkillsSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <EducationSection />
     </main>
 
     <AppFooter />

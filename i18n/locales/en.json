@@ -19,6 +19,13 @@
     "frontend": "Frontend Skills",
     "others": "Other Skills"
   },
+  "section": {
+    "about": "About Me",
+    "skills": "Skills",
+    "experience": "Work Experience",
+    "projects": "Projects",
+    "education": "Education"
+  },
   "experience": {
     "title": "Experience",
     "period": "Period",
@@ -27,7 +34,7 @@
     "achievements": "Achievements",
     "present": "Present"
   },
-  "projects": {
+  "project": {
     "title": "Projects",
     "period": "Period",
     "description": "Description",

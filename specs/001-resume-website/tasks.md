@@ -102,22 +102,22 @@
 
 ### Implementation
 
-- [ ] T024 [P] [US2] 在 `app/components/resume/ExperienceSection.vue` 建立工作經歷區塊，使用 UTimeline 垂直顯示經歷
-- [ ] T025 [P] [US2] 在 `app/components/resume/ProjectsSection.vue` 建立專案經驗區塊，使用 UCard 顯示專案資訊
-- [ ] T026 [US2] 在 ExperienceSection.vue 實作公司 logo 根據 color mode 切換（dark: white, light: black）
-- [ ] T027 [US2] 在 ExperienceSection.vue 將經歷時間軸項目轉換為 UTimeline 所需格式（icon, content）
-- [ ] T028 [US2] 在 ProjectsSection.vue 實作技術標籤和功能列表的顯示
+- [x] T024 [P] [US2] 在 `app/components/resume/ExperienceSection.vue` 建立工作經歷區塊，使用 UTimeline 垂直顯示經歷
+- [x] T025 [P] [US2] 在 `app/components/resume/ProjectsSection.vue` 建立專案經驗區塊，使用 UCard 顯示專案資訊
+- [x] T026 [US2] 在 ExperienceSection.vue 實作公司 logo 根據 color mode 切換（dark: white, light: black）
+- [x] T027 [US2] 在 ExperienceSection.vue 將經歷時間軸項目轉換為 UTimeline 所需格式（icon, content）
+- [x] T028 [US2] 在 ProjectsSection.vue 實作技術標籤和功能列表的顯示
 
 ### Page Integration
 
-- [ ] T029 [US2] 在 `app/pages/index.vue` 加入 ExperienceSection 和 ProjectsSection 元件
-- [ ] T030 [US2] 在 `app/pages/index.vue` 加入區塊錨點 id（experience, projects）
-- [ ] T031 [US2] 在 AppHeader 導航選單加入「經歷」和「專案」連結
+- [x] T029 [US2] 在 `app/pages/index.vue` 加入 ExperienceSection 和 ProjectsSection 元件
+- [x] T030 [US2] 在 `app/pages/index.vue` 加入區塊錨點 id（experience, projects）
+- [x] T031 [US2] 在 AppHeader 導航選單加入「經歷」和「專案」連結
 
 ### Styling
 
-- [ ] T032 [US2] 為 ExperienceSection 實作響應式樣式和深色模式樣式
-- [ ] T033 [US2] 為 ProjectsSection 實作響應式樣式（mobile: 單欄，desktop: 雙欄）和深色模式樣式
+- [x] T032 [US2] 為 ExperienceSection 實作響應式樣式和深色模式樣式
+- [x] T033 [US2] 為 ProjectsSection 實作響應式樣式（mobile: 單欄，desktop: 雙欄）和深色模式樣式
 
 **Checkpoint**: User Story 2 完成 - 工作經歷和專案經驗可完整瀏覽，按時間倒序排列正確
 
@@ -131,10 +131,10 @@
 
 **Note**: 大部分功能已在 Phase 3 的 AppHeader 中實作，此階段處理進階功能
 
-- [ ] T034 [US5] 在 AppHeader.vue 實作系統偏好偵測（首次訪問時根據 prefers-color-scheme 自動套用主題）
-- [ ] T035 [US5] 在 AppHeader.vue 實作偏好設定持久化（使用 localStorage 儲存主題和語言偏好）
-- [ ] T036 [US5] 驗證所有元件在深色模式下的顯示效果（確保使用 Nuxt UI 的 dark: 工具類別）
-- [ ] T037 [US5] 驗證所有語系文字的完整性（確保所有介面文字和履歷內容都有中英文版本）
+- [x] T034 [US5] 在 AppHeader.vue 實作系統偏好偵測（首次訪問時根據 prefers-color-scheme 自動套用主題）
+- [x] T035 [US5] 在 AppHeader.vue 實作偏好設定持久化（使用 localStorage 儲存主題和語言偏好）
+- [x] T036 [US5] 驗證所有元件在深色模式下的顯示效果（確保使用 Nuxt UI 的 dark: 工具類別）
+- [x] T037 [US5] 驗證所有語系文字的完整性（確保所有介面文字和履歷內容都有中英文版本）
 
 **Checkpoint**: User Story 5 完成 - 主題和語言切換功能完整，偏好設定可持久保存
 
@@ -148,18 +148,18 @@
 
 ### Implementation
 
-- [ ] T038 [US3] 在 `app/components/resume/EducationSection.vue` 建立教育背景區塊，使用 UPageCard 顯示學歷資訊
-- [ ] T039 [US3] 在 EducationSection.vue 實作論文連結顯示（如果有 thesis 資料）
+- [x] T038 [US3] 在 `app/components/resume/EducationSection.vue` 建立教育背景區塊，使用 UPageCard 顯示學歷資訊
+- [x] T039 [US3] 在 EducationSection.vue 實作論文連結顯示（如果有 thesis 資料）
 
 ### Page Integration
 
-- [ ] T040 [US3] 在 `app/pages/index.vue` 加入 EducationSection 元件
-- [ ] T041 [US3] 在 `app/pages/index.vue` 加入區塊錨點 id（education）
-- [ ] T042 [US3] 在 AppHeader 導航選單加入「教育」連結
+- [x] T040 [US3] 在 `app/pages/index.vue` 加入 EducationSection 元件
+- [x] T041 [US3] 在 `app/pages/index.vue` 加入區塊錨點 id（education）
+- [x] T042 [US3] 在 AppHeader 導航選單加入「教育」連結
 
 ### Styling
 
-- [ ] T043 [US3] 為 EducationSection 實作響應式樣式和深色模式樣式
+- [x] T043 [US3] 為 EducationSection 實作響應式樣式和深色模式樣式
 
 **Checkpoint**: User Story 3 完成 - 教育背景可完整瀏覽，按時間倒序排列正確
 

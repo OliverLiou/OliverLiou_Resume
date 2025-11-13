@@ -117,6 +117,9 @@ const isMenuOpen = ref(false)
 const navItems = [
   { key: 'intro', label: 'nav.intro', href: '#about' },
   { key: 'skills', label: 'nav.skills', href: '#skills' },
+  { key: 'experience', label: 'nav.experience', href: '#experience' },
+  { key: 'projects', label: 'nav.projects', href: '#projects' },
+  { key: 'education', label: 'nav.education', href: '#education' },
 ]
 
 // Language options
