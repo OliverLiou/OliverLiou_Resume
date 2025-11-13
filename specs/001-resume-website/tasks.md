@@ -86,9 +86,9 @@
 
 **Note**: 此 User Story 的大部分工作已在 Phase 3 中完成，此階段僅處理跨元件的響應式優化
 
-- [ ] T021 [US4] 驗證並優化所有現有元件的響應式斷點（確保 mobile < 640px, tablet ≥ 640px, desktop ≥ 1024px）
-- [ ] T022 [US4] 在 `app/assets/css/main.css` 加入全域響應式樣式（container、spacing、typography）
-- [ ] T023 [US4] 測試並修正手機漢堡選單的展開/收合行為（點擊導航項目後自動收合）
+- [x] T021 [US4] 驗證並優化所有現有元件的響應式斷點（確保 mobile < 640px, tablet ≥ 640px, desktop ≥ 1024px）
+- [x] T022 [US4] 在 `app/assets/css/main.css` 加入全域響應式樣式（container、spacing、typography）
+- [x] T023 [US4] 測試並修正手機漢堡選單的展開/收合行為（點擊導航項目後自動收合）
 
 **Checkpoint**: User Story 4 完成 - 響應式設計在所有裝置上驗證通過
 

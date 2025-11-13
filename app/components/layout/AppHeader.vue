@@ -143,8 +143,10 @@ const scrollToSection = (href: string) => {
 
 // Handle language change
 const changeLanguage = (code: string) => {
-  locale.value = code
-  localStorage.setItem('locale', code)
+  if (code === 'zh-tw' || code === 'en') {
+    locale.value = code
+    localStorage.setItem('locale', code)
+  }
 }
 
 // Handle theme change
@@ -155,7 +157,7 @@ const changeTheme = (theme: string) => {
 // Initialize preferences
 onMounted(() => {
   const savedLocale = localStorage.getItem('locale')
-  if (savedLocale) {
+  if (savedLocale && (savedLocale === 'zh-tw' || savedLocale === 'en')) {
     locale.value = savedLocale
   }
 })
