@@ -22,10 +22,10 @@
 
 **目的**: 建立專案基礎結構和型別定義
 
-- [ ] T001 在 `app/types/resume.ts` 建立所有 TypeScript 介面定義（Profile, Experience, Skills, Project, Education）
-- [ ] T002 [P] 驗證靜態資源：確認頭像圖片已存在於 `app/assets/images/ProfilePicture.jpg`
-- [ ] T003 [P] 驗證靜態資源：確認公司 logo 已存在於 `app/assets/images/HCMF_Logo_White.png` 和 `HCMF_Logo_Black.png`
-- [ ] T004 [P] 驗證靜態資源：確認學校校徽已存在於 `app/assets/images/MUST_LOGO.png`
+- [x] T001 在 `app/types/resume.ts` 建立所有 TypeScript 介面定義（Profile, Experience, Skills, Project, Education）
+- [x] T002 [P] 驗證靜態資源：確認頭像圖片已存在於 `app/assets/images/ProfilePicture.jpg`
+- [x] T003 [P] 驗證靜態資源：確認公司 logo 已存在於 `app/assets/images/HCMF_Logo_White.png` 和 `HCMF_Logo_Black.png`
+- [x] T004 [P] 驗證靜態資源：確認學校校徽已存在於 `app/assets/images/MUST_LOGO.png`
 
 ---
 
@@ -35,11 +35,11 @@
 
 **⚠️ CRITICAL**: 所有 User Story 工作必須在此階段完成後才能開始
 
-- [ ] T005 在 `app/stores/resume.ts` 建立 Pinia store，定義 state 結構（profile, experiences, skills, projects, education）
-- [ ] T006 在 `app/stores/resume.ts` 實作 getters（sortedExperiences, sortedProjects, sortedEducation）
-- [ ] T007 在 `app/stores/resume.ts` 根據 `.specify/sdd-docs/` 中的 markdown 文件初始化所有履歷資料
-- [ ] T008 [P] 在 `i18n/locales/zh-tw.json` 建立繁體中文語系檔，包含所有介面文字和履歷內容
-- [ ] T009 [P] 在 `i18n/locales/en.json` 建立英文語系檔，包含所有介面文字和履歷內容
+- [x] T005 在 `app/stores/resume.ts` 建立 Pinia store，定義 state 結構（profile, experiences, skills, projects, education）
+- [x] T006 在 `app/stores/resume.ts` 實作 getters（sortedExperiences, sortedProjects, sortedEducation）
+- [x] T007 在 `app/stores/resume.ts` 根據 `.specify/sdd-docs/` 中的 markdown 文件初始化所有履歷資料
+- [x] T008 [P] 在 `i18n/locales/zh-tw.json` 建立繁體中文語系檔，包含所有介面文字和履歷內容
+- [x] T009 [P] 在 `i18n/locales/en.json` 建立英文語系檔，包含所有介面文字和履歷內容
 
 **Checkpoint**: 基礎設施完成 - User Story 實作現在可以並行開始
 
