@@ -5,7 +5,7 @@
         {{ t('section.projects') }}
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div v-if="projects && projects.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <UCard v-for="project in projects" :key="project.name" class="hover:shadow-lg transition-shadow">
           <template #header>
             <div class="space-y-2">

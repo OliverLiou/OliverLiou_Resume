@@ -38,7 +38,8 @@ export interface Experience {
 // Skills
 export interface SkillItem {
   name: string
-  icon?: string
+  icon?: string,
+  defaultExpanded?: boolean,
   children?: SkillItem[]
 }
 
@@ -90,5 +91,6 @@ export interface TimelineItem {
 export interface TreeNode {
   label: string
   icon?: string
+  defaultExpanded?: boolean
   children?: TreeNode[]
 }

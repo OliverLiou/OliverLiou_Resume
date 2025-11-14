@@ -5,13 +5,14 @@
         {{ t('section.education') }}
       </h2>
 
-      <div class="max-w-2xl mx-auto space-y-6">
+      <div v-if="education && education.length > 0" class="max-w-2xl mx-auto space-y-6">
         <UPageCard v-for="edu in education" :key="edu.school">
           <template #title>
             <div class="flex items-center gap-4">
               <img 
                 :src="edu.logo" 
-                :alt="edu.school"
+                :alt="`${edu.school} logo`"
+                :onerror="`this.style.display='none'`"
                 class="w-16 h-16 object-contain"
               />
               <div>

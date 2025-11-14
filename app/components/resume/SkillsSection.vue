@@ -46,6 +46,7 @@ const convertToTreeNodes = (items: SkillItem[]): TreeNode[] => {
   return items.map(item => ({
     label: item.name,
     icon: item.icon,
+    defaultExpanded: item.defaultExpanded,
     children: item.children ? convertToTreeNodes(item.children) : undefined,
   }))
 }

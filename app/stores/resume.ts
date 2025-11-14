@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import hcmfLogo from '/assets/images/HCMF_SimpleLogo.png'
 import type {
   ResumeState,
   Profile,
@@ -24,7 +25,7 @@ export const useResumeStore = defineStore('resume', {
     experiences: [
       {
         company: '信昌機械股份有限公司',
-        logo: '/assets/images/HCMF_SimpleLogo.png',
+        logo: hcmfLogo,
         positions: [
           {
             title: '助理工程師',
@@ -77,33 +78,34 @@ export const useResumeStore = defineStore('resume', {
     ],
     skills: {
       backend: [
-        { name: 'C#' },
-        { name: 'Asp.Net Core' },
-        { name: 'Microsoft SQL Server' },
-        { name: 'Entity Framework Core' },
-        { name: 'RESTful API (swagger)' },
-        { name: 'JWT Authentication' },
+        { name: 'C#', icon: 'logos:c-sharp' },
+        { name: 'Asp.Net Core', icon: 'logos:dotnet' },
+        { name: 'Microsoft SQL Server', icon: '' },
+        { name: 'RESTful API (swagger)', icon: 'logos:swagger' },
+        { name: 'JWT Authentication', icon: 'logos:jwt-icon' },
       ],
       frontend: [
-        { name: 'Vue.js' },
-        { name: 'Nuxt.js' },
-        { name: 'TypeScript' },
-        { name: 'Tailwind CSS' },
-        { name: 'HTML5' },
+        { name: 'Vue.js', icon: 'logos:vue' },
+        { name: 'Nuxt.js', icon: 'logos:nuxt-icon' },
+        { name: 'TypeScript', icon: 'logos:typescript-icon-round' },
+        { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
+        { name: 'HTML5', icon: 'logos:html-5' },
       ],
       others: [
-        { name: 'Git 操作' },
-        { name: 'Azure DevOps' },
-        { name: 'Azure CI/CD' },
+        { name: 'Git', icon: 'logos:git-icon' },
+        { name: 'Azure DevOps', icon: 'devicon:azuredevops' },
+        { name: 'Azure CI/CD', icon: 'vscode-icons:file-type-azurepipelines' },
         {
           name: 'AI Coding',
+          defaultExpanded: true,
+          icon: 'streamline:ai-prompt-spark-remix',
           children: [
-            { name: 'GitHub Copilot' },
-            { name: 'GitHub Spec-Kit' },
-            { name: 'Claude Code' },
+            { name: 'GitHub Copilot', icon: 'logos:github-copilot' },
+            { name: 'GitHub Spec-Kit', icon: 'devicon:githubcopilot' },
+            { name: 'Claude Code', icon: 'logos:claude-icon' },
           ],
         },
-        { name: 'Railway 部署' },
+        { name: 'Railway', icon: 'simple-icons:railway' },
       ],
     },
     projects: [

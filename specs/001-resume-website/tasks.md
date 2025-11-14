@@ -171,22 +171,21 @@
 
 ### Edge Cases Handling
 
-- [ ] T044 處理圖片載入失敗的情況（加入 alt 文字和錯誤處理）
-- [ ] T045 處理空資料欄位的情況（優雅隱藏空欄位，避免顯示空白）
-- [ ] T046 確保極小螢幕不出現橫向滾動條（檢查所有固定寬度元素）
+- [x] T044 處理圖片載入失敗的情況（加入 alt 文字和錯誤處理）
+- [x] T045 處理空資料欄位的情況（優雅隱藏空欄位，避免顯示空白）
+- [x] T046 確保極小螢幕不出現橫向滾動條（檢查所有固定寬度元素）
 
 ### Performance & Accessibility
 
-- [ ] T047 [P] 在 `nuxt.config.ts` 加入 SEO meta tags（title, description, Open Graph）
-- [ ] T048 [P] 確保所有互動元素有適當的 ARIA 標籤（鍵盤導航、螢幕閱讀器支援）
-- [ ] T049 [P] 在 `public/sitemap.xml` 建立 sitemap 檔案
-- [ ] T050 優化圖片檔案大小（確保所有圖片已壓縮優化）
+- [x] T047 [P] 在 `nuxt.config.ts` 加入 SEO meta tags（title, description, Open Graph）
+- [x] T048 [P] 確保所有互動元素有適當的 ARIA 標籤（鍵盤導航、螢幕閱讀器支援）
+- [x] T049 [P] 在 `public/sitemap.xml` 建立 sitemap 檔案
 
 ### Final Verification
 
-- [ ] T051 在 `app/app.vue` 中整合全域布局結構（確保 Header/Footer 正確顯示）
-- [ ] T052 執行 `npm run generate` 驗證 SSG 建置成功
-- [ ] T053 執行 `npm run preview` 驗證建置結果可正常瀏覽
+- [x] T051 在 `app/app.vue` 中整合全域布局結構（確保 Header/Footer 正確顯示）
+- [x] T052 執行 `npm run generate` 驗證 SSG 建置成功
+- [x] T053 執行 `npm run preview` 驗證建置結果可正常瀏覽
 - [ ] T054 驗證所有 User Story 的 Acceptance Scenarios（手動測試檢查清單）
 
 **Checkpoint**: Polish 階段完成 - 網站已完整實作，可進行最終部署

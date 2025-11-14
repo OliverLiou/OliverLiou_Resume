@@ -1,16 +1,10 @@
 <template>
   <div>
-    <AppHeader />
-    
-    <main>
-      <IntroSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <EducationSection />
-    </main>
-
-    <AppFooter />
+    <!-- <IntroSection /> -->
+    <SkillsSection />
+    <ExperienceSection />
+    <ProjectsSection />
+    <EducationSection />
   </div>
 </template>
 

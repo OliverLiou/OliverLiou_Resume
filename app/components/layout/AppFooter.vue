@@ -1,35 +1,33 @@
 <template>
-  <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-8">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <!-- Copyright -->
-        <div class="text-sm text-gray-600 dark:text-gray-400">
-          {{ t('footer.copyright', { year: currentYear, name: profile?.name || '' }) }}
-        </div>
+  <USeparator icon="i-heroicons-user" type="dashed" class="h-px" />
 
-        <!-- Social Links -->
-        <div class="flex items-center gap-4">
-          <a
-            v-for="link in socialLinks"
-            :key="link.name"
-            :href="link.href"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
-            :aria-label="link.name"
-          >
-            <UIcon :name="link.icon" class="w-5 h-5" />
-            <span class="text-sm hidden sm:inline">{{ link.label }}</span>
-          </a>
-        </div>
-      </div>
+  <UFooter>
+    <!-- Left: Copyright -->
+    <template #left>
+      <p class="text-muted text-sm">
+        {{ t('footer.copyright', { year: currentYear, name: profile?.name || '' }) }}
+      </p>
+    </template>
 
-      <!-- Built with -->
-      <div class="text-center text-xs text-gray-500 dark:text-gray-500 mt-4">
-        {{ t('footer.builtWith') }}
-      </div>
+    <!-- Center: Built with info -->
+    <div class="text-xs text-muted">
+      {{ t('footer.builtWith') }}
     </div>
-  </footer>
+
+    <!-- Right: Social Links -->
+    <template #right>
+      <UButton
+        v-for="link in socialLinks"
+        :key="link.name"
+        :icon="link.icon"
+        color="neutral"
+        variant="ghost"
+        :to="link.href"
+        :target="link.href.startsWith('mailto:') ? undefined : '_blank'"
+        :aria-label="link.ariaLabel"
+      />
+    </template>
+  </UFooter>
 </template>
 
 <script setup lang="ts">
@@ -46,19 +44,19 @@ const socialLinks = computed(() => [
     name: 'Email',
     icon: 'i-heroicons-envelope',
     href: `mailto:${profile.value?.contacts.email}`,
-    label: profile.value?.contacts.email,
+    ariaLabel: `Email ${profile.value?.name || 'me'}`,
   },
   {
     name: 'GitHub',
     icon: 'i-heroicons-code-bracket',
-    href: profile.value?.contacts.github,
-    label: 'GitHub',
+    href: profile.value?.contacts.github || '',
+    ariaLabel: 'Visit GitHub profile',
   },
   {
     name: 'LinkedIn',
     icon: 'i-heroicons-briefcase',
-    href: profile.value?.contacts.linkedin,
-    label: 'LinkedIn',
+    href: profile.value?.contacts.linkedin || '',
+    ariaLabel: 'Visit LinkedIn profile',
   },
 ])
 </script>
