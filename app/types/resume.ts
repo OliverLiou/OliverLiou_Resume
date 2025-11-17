@@ -22,9 +22,10 @@ export interface Period {
 }
 
 export interface Position {
+  icon?: string
   title: string
   period: Period
-  description: string[]
+  descriptions: string[]
   technologies: string[]
   achievements?: string[]
 }

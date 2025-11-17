@@ -28,24 +28,26 @@ export const useResumeStore = defineStore('resume', {
         logo: hcmfLogo,
         positions: [
           {
+            icon: 'mdi:roman-numeral-1',
             title: '助理工程師',
             period: {
               start: '2017',
               end: '2020',
             },
-            description: [
+            descriptions: [
               '與使用者討論需求並負責實作',
               '維運公司系統',
             ],
             technologies: ['WinForm', 'MySQL', 'Microsoft Office'],
           },
           {
+            icon: 'mdi:roman-numeral-2',
             title: '工程師',
             period: {
               start: '2021',
               end: '2024',
             },
-            description: [
+            descriptions: [
               '瞭解使用者手工作業流程，並將流程與功能系統化',
               '學習新技術並應用於專案開發',
             ],
@@ -57,12 +59,13 @@ export const useResumeStore = defineStore('resume', {
             ],
           },
           {
+            icon: 'mdi:roman-numeral-3',
             title: '資深工程師',
             period: {
               start: '2025',
               end: '至今',
             },
-            description: [
+            descriptions: [
               '持續開發與維運專案',
               '協助團隊成員解決技術問題',
               '優化使用者體驗',
@@ -101,7 +104,7 @@ export const useResumeStore = defineStore('resume', {
           icon: 'streamline:ai-prompt-spark-remix',
           children: [
             { name: 'GitHub Copilot', icon: 'logos:github-copilot' },
-            { name: 'GitHub Spec-Kit', icon: 'devicon:githubcopilot' },
+            { name: 'GitHub Spec-Kit', icon: 'lucide:sprout' },
             { name: 'Claude Code', icon: 'logos:claude-icon' },
           ],
         },
