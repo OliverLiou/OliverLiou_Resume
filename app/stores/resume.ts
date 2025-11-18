@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia'
 import hcmfLogo from '/assets/images/HCMF_SimpleLogo.png'
+import profilePicture from '/assets/images/ProfilePicture.jpg'
+
 import type {
   ResumeState,
   Profile,
@@ -12,10 +14,37 @@ import type {
 export const useResumeStore = defineStore('resume', {
   state: (): ResumeState => ({
     profile: {
-      name: '廖軒霆',
+      name: 'HCMF',
       title: '資深工程師',
-      description: '擁有多年全端開發經驗，專注於企業級系統開發與維運，熟悉 .NET Core、Vue.js/Nuxt.js 技術棧，致力於提升開發效率與使用者體驗。',
-      avatar: '/assets/images/ProfilePicture.jpg',
+      description: '資深軟體工程師，具備 8+年的開發經驗，擅長打造企業使用的網頁應用程式',
+      features: [
+        {
+          title: '開發習慣',
+          description: '重視專案整體的「長期健康」，致力於撰寫「三個月後的自己或同事也能輕易看懂」的程式碼',
+          icon: 'lucide:code'
+        },
+        {
+          title: "獨立當責",
+          description: "能獨立負責從需求分析、開發實作到自動化部署的完整週期，主動回報進度並確保最終交付的成果",
+          icon: "lucide:target"
+        },
+        {
+          title: '持續學習',
+          description: '持續關注及學習新技術的習慣，與時俱進的同時，也在專業領域上保持競爭力',
+          icon: 'lucide:swatch-book'
+        }
+      ],
+      links: [
+        {
+          label: '查看更多',
+          to: '#skills',
+          trailingIcon: 'lucide:arrow-right-circle',
+          variant: 'subtle',
+          color: 'neutral',
+          size: 'xl'
+        }
+      ],
+      avatar: hcmfLogo,
       contacts: {
         email: 'oliver86317@gmail.com',
         github: 'https://github.com/oliver86317',

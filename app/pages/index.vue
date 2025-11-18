@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <IntroSection /> -->
+    <IntroSection />
     <SkillsSection />
     <ExperienceSection />
     <ProjectsSection />

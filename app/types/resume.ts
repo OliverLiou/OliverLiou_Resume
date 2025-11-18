@@ -2,11 +2,15 @@
 // Date: 2025-11-13
 // Feature: 001-resume-website
 
+import type { ButtonProps, PageFeatureProps } from "@nuxt/ui"
+
 // Profile
 export interface Profile {
   name: string
   title: string
-  description: string
+  description: string,
+  features: PageFeatureProps[],
+  links: ButtonProps[],
   avatar: string
   contacts: {
     email: string

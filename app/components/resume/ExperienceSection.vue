@@ -1,7 +1,7 @@
 <template>
   <section id="experience" class="py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+      <h2 class="text-3xl font-bold mb-8 block text-gray-900 dark:text-white">
         {{ t('section.experience') }}
       </h2>
 
@@ -18,7 +18,10 @@
           </h3>
         </div>
 
-        <UTimeline :items="setTimeLineItems(exp.positions)" size="2xl">
+        <UTimeline 
+          size="2xl"
+          :items="setTimeLineItems(exp.positions)"
+        >
           <template #description="{ item }" >
             <template v-if="item.descriptions.length > 0">
               <UCollapsible v-model:open="descriptions_collapsibleOpen">
@@ -72,20 +75,21 @@
                 />
                 <template #content>
                   <!-- <div class="ms-4" v-for="(technology, index) in item.technologies" :key="index"> - {{ technology }}</div> -->
-                  <UBadge
-                    v-for="(technology, index) in item.technologies"
-                    :key="index"
-                    class="my-2 mx-0.5"
-                    color="neutral"
-                    variant="outline"
-                    :label="technology"
-                  /> 
+                  <div class="ms-4">
+                    <UBadge
+                      v-for="(technology, index) in item.technologies"
+                      :key="index"
+                      class="my-2 mx-0.5"
+                      color="neutral"
+                      variant="outline"
+                      :label="technology"
+                    /> 
+                  </div>
+                  
                 </template>
               </UCollapsible>
             </template>
 
-            
-            
           </template>
         </UTimeline>
       </div>
@@ -97,6 +101,7 @@
 import { useResumeStore } from '~/stores/resume'
 // import type { Experience, Position } from '~/types/resume'
 import type { TimelineItem } from '@nuxt/ui'
+import type { ro } from '@nuxt/ui/runtime/locale/index.js'
 
 const { t } = useI18n()
 const resumeStore = useResumeStore()
