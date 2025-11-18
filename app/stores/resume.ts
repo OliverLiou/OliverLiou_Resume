@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import hcmfLogo from '/assets/images/HCMF_SimpleLogo.png'
 import profilePicture from '/assets/images/ProfilePicture.jpg'
+import mustLogo from '/assets/images/MUST_LOGO.png'
 
 import type {
   ResumeState,
@@ -36,11 +37,10 @@ export const useResumeStore = defineStore('resume', {
       ],
       links: [
         {
-          label: '查看更多',
+          label: '點擊或滾動查看更多',
           to: '#skills',
-          trailingIcon: 'lucide:arrow-right-circle',
-          variant: 'subtle',
-          color: 'neutral',
+          leadingIcon: 'lucide:mouse-pointer-click',
+          variant: 'link',
           size: 'xl'
         }
       ],
@@ -110,34 +110,63 @@ export const useResumeStore = defineStore('resume', {
     ],
     skills: {
       backend: [
-        { name: 'C#', icon: 'logos:c-sharp' },
-        { name: 'Asp.Net Core', icon: 'logos:dotnet' },
-        { name: 'Microsoft SQL Server', icon: '' },
-        { name: 'RESTful API (swagger)', icon: 'logos:swagger' },
-        { name: 'JWT Authentication', icon: 'logos:jwt-icon' },
+        {
+          label: '後端技能:',
+          icon: 'lucide:database',
+          defaultExpanded: true,
+          children: [
+            { label: 'C#', icon: 'logos:c-sharp' },
+            { label: 'Asp.Net Core', icon: 'logos:dotnet' },
+            { label: 'Microsoft SQL Server', icon: '' },
+            { label: 'RESTful API (swagger)', icon: 'logos:swagger' },
+            { label: 'JWT Authentication', icon: 'logos:jwt-icon' },
+          ] 
+        }
       ],
+      // frontend: [
+      //   { name: 'Vue.js', icon: 'logos:vue' },
+      //   { name: 'Nuxt.js', icon: 'logos:nuxt-icon' },
+      //   { name: 'TypeScript', icon: 'logos:typescript-icon-round' },
+      //   { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
+      //   { name: 'HTML5', icon: 'logos:html-5' },
+      // ],
       frontend: [
-        { name: 'Vue.js', icon: 'logos:vue' },
-        { name: 'Nuxt.js', icon: 'logos:nuxt-icon' },
-        { name: 'TypeScript', icon: 'logos:typescript-icon-round' },
-        { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
-        { name: 'HTML5', icon: 'logos:html-5' },
+        {
+          label: '前端技能:',
+          icon: 'lucide:app-window',
+          defaultExpanded: true,
+          children: [
+            { label: 'Vue.js', icon: 'logos:vue' },
+            { label: 'Nuxt.js', icon: 'logos:nuxt-icon' },
+            { label: 'TypeScript', icon: 'logos:typescript-icon-round' },
+            { label: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
+            { label: 'HTML5', icon: 'logos:html-5' },
+          ]
+        }
       ],
       others: [
-        { name: 'Git', icon: 'logos:git-icon' },
-        { name: 'Azure DevOps', icon: 'devicon:azuredevops' },
-        { name: 'Azure CI/CD', icon: 'vscode-icons:file-type-azurepipelines' },
+        
         {
-          name: 'AI Coding',
+          label: '其它技能:',
+          icon: 'lucide:share-2',
           defaultExpanded: true,
-          icon: 'streamline:ai-prompt-spark-remix',
           children: [
-            { name: 'GitHub Copilot', icon: 'logos:github-copilot' },
-            { name: 'GitHub Spec-Kit', icon: 'lucide:sprout' },
-            { name: 'Claude Code', icon: 'logos:claude-icon' },
-          ],
-        },
-        { name: 'Railway', icon: 'simple-icons:railway' },
+            { label: 'Git', icon: 'logos:git-icon' },
+            { label: 'Azure DevOps', icon: 'devicon:azuredevops' },
+            { label: 'Azure CI/CD', icon: 'vscode-icons:file-type-azurepipelines' },
+            {
+              label: 'AI Coding',
+              defaultExpanded: true,
+              icon: 'streamline:ai-prompt-spark-remix',
+              children: [
+                { label: 'GitHub Copilot', icon: 'logos:github-copilot' },
+                { label: 'GitHub Spec-Kit', icon: 'lucide:sprout' },
+                { label: 'Claude Code', icon: 'logos:claude-icon' },
+              ],
+            },
+            { label: 'Railway', icon: 'simple-icons:railway' },
+          ]
+        }
       ],
     },
     projects: [
@@ -213,7 +242,7 @@ export const useResumeStore = defineStore('resume', {
     education: [
       {
         school: '明新科技大學',
-        logo: '/assets/images/MUST_LOGO.png',
+        logo: mustLogo,
         degree: '資訊管理系碩士班',
         period: {
           start: '2015-09',

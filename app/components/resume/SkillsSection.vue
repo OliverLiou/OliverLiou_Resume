@@ -6,25 +6,16 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Backend Skills -->
         <div>
-          <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-            {{ t('skills.backend') }}
-          </h3>
           <UTree :items="backendSkills" size="xl" />
         </div>
 
         <!-- Frontend Skills -->
         <div>
-          <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-            {{ t('skills.frontend') }}
-          </h3>
           <UTree :items="frontendSkills" size="xl" />
         </div>
 
         <!-- Other Skills -->
         <div>
-          <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-            {{ t('skills.others') }}
-          </h3>
           <UTree :items="othersSkills" size="xl" />
         </div>
       </div>
@@ -52,14 +43,17 @@ const convertToTreeNodes = (items: SkillItem[]): TreeNode[] => {
 }
 
 const backendSkills = computed(() => 
-  skills.value?.backend ? convertToTreeNodes(skills.value.backend) : []
+  // skills.value?.backend ? convertToTreeNodes(skills.value.backend) : []
+  skills.value?.backend ?? []
 )
 
 const frontendSkills = computed(() => 
-  skills.value?.frontend ? convertToTreeNodes(skills.value.frontend) : []
+  // skills.value?.frontend ? convertToTreeNodes(skills.value.frontend) : []
+   skills.value?.frontend ?? []
 )
 
 const othersSkills = computed(() => 
-  skills.value?.others ? convertToTreeNodes(skills.value.others) : []
+  // skills.value?.others ? convertToTreeNodes(skills.value.others) : []
+   skills.value?.others ?? []
 )
 </script>

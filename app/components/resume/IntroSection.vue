@@ -1,20 +1,6 @@
 <template>
   <section id="about">
-    <!-- <UPageCTA
-      class="rounded-none sm:rounded-xl"
-      orientation="horizontal"
-      variant="naked"
-      :title="profile?.name"
-      :description="profile?.description"
-    >
-      <img 
-        class="w-1/2 rounded-lg mx-auto block"
-        :src="profile?.avatar"
-      />
-    </UPageCTA> -->
-
     <UPageSection
-      class="rounded-none sm:rounded-xl"
       orientation="horizontal"
       variant="naked"
       :title="profile?.name"
@@ -22,11 +8,12 @@
       :features="profile?.features"
       :links="profile?.links"
       :ui="{
-        links: 'flex lg:justify-end sm:justify-center',
+        container: 'lg:grid lg:grid-cols-3 lg:gap-8',
+        wrapper: 'col-span-2'
       }"
     >
       <img 
-        class="w-1/2 rounded-lg mx-auto block"
+        class="rounded-lg w-full"
         :src="profile?.avatar"
       />
     </UPageSection>
@@ -36,7 +23,6 @@
 </template>
 
 <script setup lang="ts">
-import { pageSection } from '#build/ui'
 import { useResumeStore } from '~/stores/resume'
 
 const { t } = useI18n()

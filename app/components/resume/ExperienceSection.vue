@@ -21,6 +21,7 @@
         <UTimeline 
           size="2xl"
           :items="setTimeLineItems(exp.positions)"
+          :model-value="exp.positions.length - 1"
         >
           <template #description="{ item }" >
             <template v-if="item.descriptions.length > 0">
@@ -74,7 +75,6 @@
                   }"
                 />
                 <template #content>
-                  <!-- <div class="ms-4" v-for="(technology, index) in item.technologies" :key="index"> - {{ technology }}</div> -->
                   <div class="ms-4">
                     <UBadge
                       v-for="(technology, index) in item.technologies"
@@ -92,6 +92,7 @@
 
           </template>
         </UTimeline>
+        
       </div>
     </div>
   </section>
@@ -99,64 +100,12 @@
 
 <script setup lang="ts">
 import { useResumeStore } from '~/stores/resume'
-// import type { Experience, Position } from '~/types/resume'
 import type { TimelineItem } from '@nuxt/ui'
-import type { ro } from '@nuxt/ui/runtime/locale/index.js'
 
 const { t } = useI18n()
 const resumeStore = useResumeStore()
 
 const experiences = computed(() => resumeStore.sortedExperiences)
-
-// const getTimelineItems = (positions: Experience['positions']) => {
-//   return positions.map((position) => {
-//     const children: any[] = [
-//       // Title and Period
-//       h('div', [
-//         h('h4', { class: 'text-xl font-semibold text-gray-900 dark:text-white mb-1' }, position.title),
-//         h('p', { class: 'text-sm text-gray-600 dark:text-gray-400' }, 
-//           `${position.period.start} ~ ${position.period.end}`
-//         ),
-//       ]),
-      
-//       // Description
-//       h('div', { class: 'space-y-2' }, [
-//         h('ul', { class: 'list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300' },
-//           position.description.map(desc => h('li', desc))
-//         ),
-//       ]),
-      
-//       // Technologies
-//       h('div', [
-//         h('p', { class: 'text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2' }, 
-//           t('experience.technologies')
-//         ),
-//         h('p', { class: 'text-sm text-gray-600 dark:text-gray-400' }, 
-//           position.technologies.join('、')
-//         ),
-//       ]),
-//     ]
-
-//     // Achievements (if exists)
-//     if (position.achievements && position.achievements.length > 0) {
-//       children.push(
-//         h('div', [
-//           h('p', { class: 'text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2' }, 
-//             t('experience.achievements')
-//           ),
-//           h('ul', { class: 'list-disc list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400' },
-//             position.achievements.map(achievement => h('li', achievement))
-//           ),
-//         ])
-//       )
-//     }
-
-//     return {
-//       icon: 'i-heroicons-briefcase',
-//       content: h('div', { class: 'space-y-4' }, children),
-//     }
-//   })
-// }
 
 const setTimeLineItems = (positions: TimelineItem[]) => {
   return positions.map(p => {

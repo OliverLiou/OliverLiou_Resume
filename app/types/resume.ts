@@ -2,7 +2,7 @@
 // Date: 2025-11-13
 // Feature: 001-resume-website
 
-import type { ButtonProps, PageFeatureProps } from "@nuxt/ui"
+import type { ButtonProps, PageFeatureProps, TreeItem } from "@nuxt/ui"
 
 // Profile
 export interface Profile {
@@ -40,18 +40,18 @@ export interface Experience {
   positions: Position[]
 }
 
-// Skills
-export interface SkillItem {
-  name: string
-  icon?: string,
-  defaultExpanded?: boolean,
-  children?: SkillItem[]
-}
+// // Skills
+// export interface SkillItem {
+//   name: string
+//   icon?: string,
+//   defaultExpanded?: boolean,
+//   children?: SkillItem[]
+// }
 
 export interface Skills {
-  backend: SkillItem[]
-  frontend: SkillItem[]
-  others: SkillItem[]
+  backend: TreeItem[]
+  frontend: TreeItem[]
+  others: TreeItem[]
 }
 
 // Project
