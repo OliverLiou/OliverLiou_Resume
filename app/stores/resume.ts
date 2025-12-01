@@ -123,13 +123,6 @@ export const useResumeStore = defineStore('resume', {
           ] 
         }
       ],
-      // frontend: [
-      //   { name: 'Vue.js', icon: 'logos:vue' },
-      //   { name: 'Nuxt.js', icon: 'logos:nuxt-icon' },
-      //   { name: 'TypeScript', icon: 'logos:typescript-icon-round' },
-      //   { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
-      //   { name: 'HTML5', icon: 'logos:html-5' },
-      // ],
       frontend: [
         {
           label: '前端技能:',
@@ -145,7 +138,6 @@ export const useResumeStore = defineStore('resume', {
         }
       ],
       others: [
-        
         {
           label: '其它技能:',
           icon: 'lucide:share-2',
@@ -181,10 +173,18 @@ export const useResumeStore = defineStore('resume', {
         },
         technologies: ['.Net 8', 'Nuxt 3'],
         features: [
-          'Bom物料清單上傳',
-          '跨系統與Oracle EBS系統進行資料整合',
-          '根據預設公式計算成本',
-          '生成標準成本分析表',
+          {
+            label: '物料清單上傳',
+            description: '使用者可上傳Bom物料清單(xlsx格式)，系統自動解析並讀取物料資訊'
+          },
+          {
+            label: '跨系統整合',
+            description: '根據物料清單中的欄位，自動至Oracle EBS系統蒐集相關成本資料'
+          },
+          {
+            label: '成本彙整',
+            description: '套入廠內制式的報表，將每一個物料的成本進行彙整，同時提供大項目金額彙整'
+          }
         ],
       },
       {
@@ -197,9 +197,18 @@ export const useResumeStore = defineStore('resume', {
         },
         technologies: ['.Net 6', 'Nuxt 2'],
         features: [
-          '紀錄鋼材採購、合約、發票、押匯資料',
-          '定時任務, 自動更新與追蹤資料',
-          '根據物料需求產生推移表, 並預測下次採購時間',
+          {
+            label: '跨系統整合資料',
+            description: '與中鋼API索取合約、發票、押匯...等資料，確保相關資訊的保存與即時更新',
+          },
+          {
+            label: '自動化更新',
+            description: '透過定時任務，自動更新鋼捲資料，減少人工作業並提升資料準確性',
+          },
+          {
+            label: '彙整報表',
+            description: '根據件號系統可即時抓取當月份相關資料, 並統整在推移表上, 便於採購人員查看資料',
+          }
         ],
       },
       {
@@ -213,29 +222,51 @@ export const useResumeStore = defineStore('resume', {
         },
         technologies: ['.Net 5', 'Nuxt 2'],
         features: [
-          '行事曆管理',
-          '支援多種排程策略(特急、連續、區間、定頻…等等)',
-          '各式報表輸出(月排程、達成率…等等)',
-          '跨系統與Oracle EBS系統進行即時生產監控',
+          {
+            label: '行事曆管理',
+            description: '不同的生產線別，可設置個別的行事曆，靈活調整生產計劃'
+          },
+          {
+            label: '多種排程策略',
+            description: '支援特急、連續、區間、定頻等多種排程策略，滿足不同生產需求'
+          },
+          {
+            label: '報表輸出',
+            description: '提供月排程、達成率等各式報表，方便管理與決策'
+          },
+          {
+            label: '系統整合',
+            description: '與Oracle EBS系統進行即時生產監控，確保數據一致性與準確性'
+          }
         ],
       },
       {
-        name: '公司前端/後端開發模板',
+        name: '前端/後端開發模板',
         nameEn: 'Frontend/Backend Development Template',
         description:
-          '公司內部前端與後端開發模板, 縮短專案開發時間及提升開發效率',
+          '建立公司內部前端與後端開發模板, 縮短專案開發時間及提升開發效率',
         period: {
           start: '2024-03',
           end: '持續更新中',
         },
         technologies: ['.Net 8', 'Nuxt 3'],
         features: [
-          '權限控制',
-          'Entity Log日誌記錄',
-          '與內部AD整合實現單一入口登入',
-          '統一資料表CRUD操作',
-          '統一前端 layout',
-          '頁籤導航',
+          {
+            label: 'Entity Log日誌記錄',
+            description: '根據操作人員，紀錄所有資料異動，包含新增、修改、刪除等操作，方便追蹤與回溯'
+          },
+          {
+            label: '與內部AD整合',
+            description: '實現密碼單一入口登入，不需要記憶多組帳號密碼'
+          },
+          {
+            label: 'CRUD共用介面',
+            description: '統一資料表的新增、讀取、更新、刪除操作，提升開發效率並確保一致性'
+          },
+          {
+            label: '前端統一Layout',
+            description: '建立統一的前端頁面佈局，包含頁籤導航等功能，提升使用者體驗'
+          }
         ],
       },
     ],

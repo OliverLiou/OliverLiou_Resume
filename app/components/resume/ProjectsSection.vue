@@ -5,68 +5,132 @@
         {{ t('section.projects') }}
       </h2>
 
-      <div v-if="projects && projects.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <UCard v-for="project in projects" :key="project.name" class="hover:shadow-lg transition-shadow">
-          <template #header>
-            <div class="space-y-2">
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                {{ project.name }}
-              </h3>
-              <p v-if="project.nameEn" class="text-sm text-gray-600 dark:text-gray-400">
-                {{ project.nameEn }}
-              </p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">
-                {{ t('project.period') }}: {{ project.period.start }} ~ {{ project.period.end }}
-              </p>
-            </div>
-          </template>
+      <div v-if="projects.length" >
+        <UCarousel
+          :items="projects"
+          v-slot="{ item }"
+          dots
+          loop
+          arrows
+          class-names
+          class="py-2"
+          :ui="{
+            item: 'basis-[50%] transition-opacity [&:not(.is-snapped)]:opacity-30',
+            dot: 'w-6 h-1.5'
+          }"
+        >
+          <div class="py-1 px-2 h-full">
+            <UPageCard class="h-full">
+              <template #title>
+                <div class="flex flex-col gap-2 text-xl">
+                  {{ getProjectTitle(item) }}
+                </div>
 
-          <div class="space-y-4">
-            <!-- Description -->
-            <p class="text-gray-700 dark:text-gray-300">
-              {{ project.description }}
-            </p>
+                <!-- <USeparator /> -->
+              </template>
+              
+              <template #description>
+                <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-md text-gray-600 dark:text-gray-400">
+                  <!-- 期間 -->
+                  <div class="flex items-center whitespace-nowrap">
+                    <UIcon name="lucide:calendar" class="mr-1" />
+                    {{ t('project.period') }}:
+                  </div>
+                  <div class="flex items-center">
+                    {{ formatPeriod(item.period) }}
+                  </div>
 
-            <!-- Technologies -->
-            <div>
-              <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                {{ t('project.technologies') }}
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <UBadge 
-                  v-for="tech in project.technologies" 
-                  :key="tech"
-                  color="primary"
-                  variant="soft"
-                >
-                  {{ tech }}
-                </UBadge>
-              </div>
-            </div>
+                  <!-- 描述 -->
+                  <div class="flex items-start whitespace-nowrap">
+                    <UIcon name="lucide:book-marked" class="mr-1 mt-0.5" />
+                    {{ t('project.description') }}:
+                  </div>
+                  <div>
+                    {{ item.description }}
+                  </div>
 
-            <!-- Features -->
-            <div>
-              <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                {{ t('project.features') }}
-              </p>
-              <ul class="list-disc list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400">
-                <li v-for="feature in project.features" :key="feature">
-                  {{ feature }}
-                </li>
-              </ul>
-            </div>
+                  <!-- 主要功能 -->
+                  <div v-if="item.features?.length" class="flex items-start whitespace-nowrap">
+                    <UIcon name="lucide:bookmark-check" class="mr-1 mt-0.5" />
+                    {{ t('project.features') }}:
+                  </div>
+                  <div v-if="item.features?.length" class="space-y-1">
+                    <UPopover arrow v-for="feature in item.features">
+                      <UBadge variant="outline" color="primary" class="font-medium mr-1" :label="feature.label" />
+                      <template #content>
+                        <span class="m-4 inline-flex">
+                          {{ feature.description  }}
+                        </span>
+                      </template>
+                    </UPopover>
+                  </div>
+
+                  <!-- 技術標籤 -->
+                  <div class="flex items-start whitespace-nowrap">
+                    <UIcon name="lucide:code" class="mr-1 mt-0.5" />
+                    {{ t('project.technologies') }}:
+                  </div>
+                  <div class="flex flex-wrap gap-1">
+                    <UBadge
+                      v-for="tech in item.technologies"
+                      :key="tech"
+                      :label="tech"
+                      variant="outline"
+                      color="neutral"
+                      size="md"
+                    >
+                      <template #leading>
+                        <UIcon :name="tech.includes('.Net')? 'logos:dotnet' : 'logos:nuxt-icon' " />
+                      </template>
+                    </UBadge>
+                  </div>
+                </div>
+              </template>
+            </UPageCard>
           </div>
-        </UCard>
+        </UCarousel>
       </div>
+
+      <p v-else class="text-center text-gray-500 dark:text-gray-400">
+        {{ t('common.noData') }}
+      </p>
     </div>
+
   </section>
 </template>
 
 <script setup lang="ts">
+import { card } from '#build/ui'
 import { useResumeStore } from '~/stores/resume'
+import type { Project, featureItem } from '~/types/resume'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const resumeStore = useResumeStore()
 
 const projects = computed(() => resumeStore.sortedProjects)
+
+const getProjectTitle = (project: Project) => {
+  if (locale.value?.startsWith('en')) {
+    return project.nameEn || project.name
+  }
+  return project.name || project.nameEn || ''
+}
+
+const formatPeriod = (period: Project['period']) => `${period.start} ~ ${period.end}`
+
+const buildFeatureItems = (project: Project, projectIndex: number) =>
+  (project.features ?? [])
+    .map((feature, featureIndex) => {
+      const description = feature.description?.trim() ?? ''
+
+      return {
+        ...feature,
+        description,
+        value: `${projectIndex}-${featureIndex}`,
+      }
+    })
+    .filter((feature) => feature.description.length > 0)
+
+// const hasFeatureContent = (project: Project) => buildFeatureItems(project, 0).length > 0
+
 </script>

@@ -20,8 +20,9 @@
 
         <UTimeline 
           size="2xl"
+          reverse
           :items="setTimeLineItems(exp.positions)"
-          :model-value="exp.positions.length - 1"
+          :model-value="0"
         >
           <template #description="{ item }" >
             <template v-if="item.descriptions.length > 0">

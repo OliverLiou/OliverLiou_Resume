@@ -40,13 +40,13 @@ export interface Experience {
   positions: Position[]
 }
 
-// // Skills
-// export interface SkillItem {
-//   name: string
-//   icon?: string,
-//   defaultExpanded?: boolean,
-//   children?: SkillItem[]
-// }
+// Skills
+export interface SkillItem {
+  name: string
+  icon?: string,
+  defaultExpanded?: boolean,
+  children?: SkillItem[]
+}
 
 export interface Skills {
   backend: TreeItem[]
@@ -54,6 +54,10 @@ export interface Skills {
   others: TreeItem[]
 }
 
+export interface featureItem {
+  label: string,
+  description: string
+}
 // Project
 export interface Project {
   name: string
@@ -61,7 +65,7 @@ export interface Project {
   description: string
   period: Period
   technologies: string[]
-  features: string[]
+  features: featureItem[]
 }
 
 // Education

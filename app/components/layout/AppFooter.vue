@@ -11,7 +11,7 @@
 
     <!-- Center: Built with info -->
     <div class="text-xs text-muted">
-      {{ t('footer.builtWith') }}
+      <!-- {{ t('footer.builtWith') }} -->
     </div>
 
     <!-- Right: Social Links -->
