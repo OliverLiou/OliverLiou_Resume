@@ -42,19 +42,19 @@ const currentYear = new Date().getFullYear()
 const socialLinks = computed(() => [
   {
     name: 'Email',
-    icon: 'i-heroicons-envelope',
+    icon: 'lucide:mail',
     href: `mailto:${profile.value?.contacts.email}`,
     ariaLabel: `Email ${profile.value?.name || 'me'}`,
   },
   {
     name: 'GitHub',
-    icon: 'i-heroicons-code-bracket',
+    icon: 'lucide:github',
     href: profile.value?.contacts.github || '',
     ariaLabel: 'Visit GitHub profile',
   },
   {
     name: 'LinkedIn',
-    icon: 'i-heroicons-briefcase',
+    icon: 'lucide:linkedin',
     href: profile.value?.contacts.linkedin || '',
     ariaLabel: 'Visit LinkedIn profile',
   },

@@ -1,7 +1,7 @@
 <template>
-  <section id="projects" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <section id="projects" class="py-16 bg-gray-100/50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+      <h2 class="flex justify-center text-3xl font-bold mb-8 text-gray-900 dark:text-white">
         {{ t('section.projects') }}
       </h2>
 
@@ -15,7 +15,7 @@
           class-names
           class="py-2"
           :ui="{
-            item: 'basis-[50%] transition-opacity [&:not(.is-snapped)]:opacity-30',
+            item: 'basis-[60%] transition-opacity [&:not(.is-snapped)]:opacity-30',
             dot: 'w-6 h-1.5'
           }"
         >

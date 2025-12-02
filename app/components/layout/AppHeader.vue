@@ -3,8 +3,7 @@
     <!-- Title slot -->
     <template #title>
       <div class="text-xl font-bold">
-        <!-- {{ t('nav.intro') }} -->
-        Nuxt UI
+        {{ t('nav.title') }}
       </div>
     </template>
 

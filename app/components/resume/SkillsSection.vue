@@ -1,7 +1,7 @@
 <template>
-  <section id="skills" class="py-16 bg-gray-50 dark:bg-gray-900">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8">{{ t('skills.title') }}</h2>
+  <section id="skills" class="py-16 bg-gray-100/50 dark:bg-gray-900">
+    <div class="container  mx-auto px-4">
+      <h2 class="flex justify-center text-3xl font-bold mb-8">{{ t('skills.title') }}</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Backend Skills -->

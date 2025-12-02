@@ -1,7 +1,7 @@
 <template>
   <section id="education" class="py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
+      <h2 class="flex justify-center text-3xl font-bold mb-8 text-gray-900 dark:text-white">
         {{ t('section.education') }}
       </h2>
 

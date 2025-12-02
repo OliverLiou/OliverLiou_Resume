@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia'
 import hcmfLogo from '/assets/images/HCMF_SimpleLogo.png'
+import hcmfLogoWhite from '/assets/images/HCMF_Logo_White.png'
+import hcmfLogoBlack from '/assets/images/HCMF_Logo_Black.png'
 import profilePicture from '/assets/images/ProfilePicture.jpg'
 import mustLogo from '/assets/images/MUST_LOGO.png'
 
@@ -15,7 +17,7 @@ import type {
 export const useResumeStore = defineStore('resume', {
   state: (): ResumeState => ({
     profile: {
-      name: 'HCMF',
+      name: '劉亦剛',
       title: '資深工程師',
       description: '資深軟體工程師，具備 8+年的開發經驗，擅長打造企業使用的網頁應用程式',
       features: [
@@ -37,7 +39,7 @@ export const useResumeStore = defineStore('resume', {
       ],
       links: [
         {
-          label: '點擊或滾動查看更多',
+          label: '點擊查看更多',
           to: '#skills',
           leadingIcon: 'lucide:mouse-pointer-click',
           variant: 'link',
@@ -46,9 +48,9 @@ export const useResumeStore = defineStore('resume', {
       ],
       avatar: hcmfLogo,
       contacts: {
-        email: 'oliver86317@gmail.com',
-        github: 'https://github.com/oliver86317',
-        linkedin: 'https://www.linkedin.com/in/oliver-liou',
+        email: 'cpsgang@gmail.com',
+        github: 'https://github.com/OliverLiou',
+        linkedin: 'https://www.linkedin.com/in/亦剛-劉-51980936a',
       },
     },
     experiences: [
