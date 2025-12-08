@@ -63,6 +63,10 @@
     "zh-tw": "繁體中文",
     "en": "English"
   },
+  "settings": {
+    "language": "語言",
+    "theme": "主題"
+  },
   "common": {
     "loading": "載入中...",
     "error": "發生錯誤",
