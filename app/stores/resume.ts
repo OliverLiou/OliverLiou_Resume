@@ -17,7 +17,7 @@ import type {
 export const useResumeStore = defineStore('resume', {
   state: (): ResumeState => ({
     profile: {
-      name: 'HCMF',
+      name: '劉亦剛',
       title: '資深工程師',
       description: '資深軟體工程師，具備 8+年的開發經驗，擅長打造企業使用的網頁應用程式',
       features: [
@@ -47,7 +47,7 @@ export const useResumeStore = defineStore('resume', {
           size: 'xl'
         }
       ],
-      avatar: hcmfLogo,
+      avatar: profilePicture,
       contacts: {
         email: 'cpsgang@gmail.com',
         github: 'https://github.com/OliverLiou',

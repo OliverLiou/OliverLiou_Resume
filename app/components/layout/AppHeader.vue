@@ -39,9 +39,9 @@ const { t, locale, setLocale, locales } = useI18n()
 const navigationItems = computed<NavigationMenuItem[][]>(() => [
   [
     { 
-      value: 'intro',
-      label: t('nav.intro'), 
-      to: '#intro',
+      value: 'about',
+      label: t('nav.about'), 
+      to: '#about',
     },
     { 
       value: 'skills',
