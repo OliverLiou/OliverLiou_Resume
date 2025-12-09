@@ -1,24 +1,24 @@
 <template>
   <section id="about">
     <UPageSection
-      orientation="horizontal"
+      orientation="vertical"
       variant="naked"
       :title="profile?.name"
       :description="profile?.description"
       :features="profile?.features"
       :links="profile?.links"
       :ui="{
-        container: 'lg:grid lg:grid-cols-3 lg:gap-8',
-        wrapper: 'col-span-2'
+        container: 'py-20 sm:py-24 lg:py-28',
+        headline: 'flex items-center justify-center mb-6',
       }"
     >
-      <img 
-        class="rounded-lg w-full"
-        :src="profile?.avatar"
-      />
+      <template #headline>
+        <UAvatar
+          :src="profile?.avatar"
+          class="size-24 sm:size-36 ring ring-default ring-offset-3 ring-offset-bg"
+        />
+      </template>
     </UPageSection>
-
-    
   </section>
 </template>
 

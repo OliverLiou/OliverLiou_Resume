@@ -11,7 +11,7 @@
     >
     
     <template #list-trailing>
-      <USeparator orientation="vertical" class="h-4 dark:bg-gray-300" />
+      <USeparator orientation="vertical" class="h-4 dark:bg-gray-100" />
       <UDropdownMenu :items="settingsMenuItems" class="mr-1">
         <UButton
           icon="i-lucide-settings"

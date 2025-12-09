@@ -17,14 +17,14 @@ import type {
 export const useResumeStore = defineStore('resume', {
   state: (): ResumeState => ({
     profile: {
-      name: '劉亦剛',
+      name: 'HCMF',
       title: '資深工程師',
       description: '資深軟體工程師，具備 8+年的開發經驗，擅長打造企業使用的網頁應用程式',
       features: [
         {
           title: '開發習慣',
-          description: '重視專案整體的「長期健康」，致力於撰寫「三個月後的自己或同事也能輕易看懂」的程式碼',
-          icon: 'lucide:code'
+          description: '重視專案整體的「長期健康」，致力於撰寫三個月後「自己或同事也能輕易看懂」的程式碼',
+          icon: 'lucide:folder-code'
         },
         {
           title: "獨立當責",
@@ -42,7 +42,8 @@ export const useResumeStore = defineStore('resume', {
           label: '點擊查看更多',
           to: '#skills',
           leadingIcon: 'lucide:mouse-pointer-click',
-          variant: 'link',
+          color: 'neutral',
+          variant: 'outline',
           size: 'xl'
         }
       ],
@@ -119,7 +120,7 @@ export const useResumeStore = defineStore('resume', {
           children: [
             { label: 'C#', icon: 'logos:c-sharp' },
             { label: 'Asp.Net Core', icon: 'logos:dotnet' },
-            { label: 'Microsoft SQL Server', icon: '' },
+            { label: 'Microsoft SQL Server', icon: 'devicon:microsoftsqlserver-wordmark' },
             { label: 'RESTful API (swagger)', icon: 'logos:swagger' },
             { label: 'JWT Authentication', icon: 'logos:jwt-icon' },
           ] 

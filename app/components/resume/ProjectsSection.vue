@@ -15,7 +15,7 @@
           class-names
           class="py-2"
           :ui="{
-            item: 'basis-[60%] transition-opacity [&:not(.is-snapped)]:opacity-30',
+            item: 'basis-[90%] sm:basis-[75%] md:basis-[60%] lg:basis-[50%] transition-opacity [&:not(.is-snapped)]:opacity-30',
             dot: 'w-6 h-1.5'
           }"
         >
