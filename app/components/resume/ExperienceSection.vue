@@ -36,7 +36,7 @@
                     variant="subtle"
                     leading-icon="lucide:message-square-text"
                     trailing-icon='i-lucide-chevron-down'
-                    label="工作描述"
+                    :label="t('experience.description')"
                     :ui="{
                       trailingIcon: 'group-data-[state=open]:rotate-180 transition-transform duration-200'
                     }"
@@ -60,7 +60,7 @@
                     variant="subtle" 
                     leading-icon="lucide:trophy"
                     trailing-icon='i-lucide-chevron-down'
-                    label="工作成就"
+                    :label="t('experience.achievements')"
                     :ui="{
                       trailingIcon: 'group-data-[state=open]:rotate-180 transition-transform duration-200'
                     }"
@@ -79,7 +79,7 @@
                     variant="subtle" 
                     leading-icon="lucide:message-square-code"
                     trailing-icon='i-lucide-chevron-down'
-                    label="開發工具"
+                    :label="t('experience.technologies')"
                     :ui="{
                       trailingIcon: 'group-data-[state=open]:rotate-180 transition-transform duration-200'
                     }"

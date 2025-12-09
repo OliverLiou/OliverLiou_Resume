@@ -23,7 +23,7 @@
             <UPageCard class="h-full">
               <template #title>
                 <div class="flex flex-col gap-2 text-xl">
-                  {{ getProjectTitle(item) }}
+                  {{ item.name }}
                 </div>
 
                 <!-- <USeparator /> -->
@@ -109,28 +109,6 @@ const resumeStore = useResumeStore()
 
 const projects = computed(() => resumeStore.sortedProjects)
 
-const getProjectTitle = (project: Project) => {
-  if (locale.value?.startsWith('en')) {
-    return project.nameEn || project.name
-  }
-  return project.name || project.nameEn || ''
-}
-
 const formatPeriod = (period: Project['period']) => `${period.start} ~ ${period.end}`
-
-const buildFeatureItems = (project: Project, projectIndex: number) =>
-  (project.features ?? [])
-    .map((feature, featureIndex) => {
-      const description = feature.description?.trim() ?? ''
-
-      return {
-        ...feature,
-        description,
-        value: `${projectIndex}-${featureIndex}`,
-      }
-    })
-    .filter((feature) => feature.description.length > 0)
-
-// const hasFeatureContent = (project: Project) => buildFeatureItems(project, 0).length > 0
 
 </script>
