@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "title": "個人履歷",
+    "about": "關於我",
+    "skills": "專業技能",
+    "experience": "工作經歷",
+    "projects": "專案經驗",
+    "education": "教育背景"
+  },
+  "intro": {
+    "title": "關於我",
+    "contactTitle": "聯絡方式",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "skills": {
+    "title": "專業技能",
+    "backend": "後端技能",
+    "frontend": "前端技能",
+    "others": "其他技能"
+  },
+  "section": {
+    "about": "關於我",
+    "skills": "專業技能",
+    "experience": "工作經歷",
+    "projects": "專案經驗",
+    "education": "教育背景"
+  },
+  "experience": {
+    "title": "工作經歷",
+    "period": "任職期間",
+    "description": "工作描述",
+    "technologies": "使用技術",
+    "achievements": "主要成就",
+    "present": "至今"
+  },
+  "project": {
+    "title": "專案經驗",
+    "period": "專案期間",
+    "description": "專案描述",
+    "technologies": "使用技術",
+    "features": "主要功能",
+    "ongoing": "持續更新中"
+  },
+  "education": {
+    "title": "教育背景",
+    "period": "就學期間",
+    "degree": "學歷",
+    "thesis": "論文",
+    "viewThesis": "查看論文"
+  },
+  "footer": {
+    "copyright": "© {year} {name}. 版權所有。",
+    "builtWith": "使用 Nuxt 4 與 Nuxt UI 建立"
+  },
+  "theme": {
+    "light": "淺色模式",
+    "dark": "深色模式",
+    "system": "跟隨系統"
+  },
+  "language": {
+    "zh-tw": "繁體中文",
+    "en": "English"
+  },
+  "settings": {
+    "language": "語言",
+    "theme": "主題"
+  },
+  "common": {
+    "loading": "載入中...",
+    "error": "發生錯誤",
+    "noData": "暫無資料"
+  }
+}

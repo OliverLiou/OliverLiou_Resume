@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "title": "Personal Resume",
+    "about": "About Me",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education"
+  },
+  "intro": {
+    "title": "About Me",
+    "contactTitle": "Contact Information",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "skills": {
+    "title": "Skills",
+    "backend": "Backend Skills",
+    "frontend": "Frontend Skills",
+    "others": "Other Skills"
+  },
+  "section": {
+    "about": "About Me",
+    "skills": "Skills",
+    "experience": "Work Experience",
+    "projects": "Projects",
+    "education": "Education"
+  },
+  "experience": {
+    "title": "Experience",
+    "period": "Period",
+    "description": "Description",
+    "technologies": "Technologies",
+    "achievements": "Achievements",
+    "present": "Present"
+  },
+  "project": {
+    "title": "Projects",
+    "period": "Period",
+    "description": "Description",
+    "technologies": "Technologies",
+    "features": "Features",
+    "ongoing": "Ongoing"
+  },
+  "education": {
+    "title": "Education",
+    "period": "Period",
+    "degree": "Degree",
+    "thesis": "Thesis",
+    "viewThesis": "View Thesis"
+  },
+  "footer": {
+    "copyright": "© {year} {name}. All rights reserved.",
+    "builtWith": "Built with Nuxt 4 & Nuxt UI"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "system": "System"
+  },
+  "language": {
+    "zh-tw": "繁體中文",
+    "en": "English"
+  },
+  "settings": {
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "noData": "No data available"
+  }
+}
