@@ -29,10 +29,10 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: '廖軒霆 - 資深工程師 | Oliver Liou - Senior Engineer',
+      title: '劉亦剛 - 資深工程師 | Oliver Liou - Senior Engineer',
       meta: [
         { name: 'description', content: '擁有多年全端開發經驗，專注於企業級系統開發與維運，熟悉 .NET Core、Vue.js/Nuxt.js 技術棧。With years of full-stack development experience, specializing in enterprise system development and operations.' },
-        { name: 'keywords', content: 'Oliver Liou, 廖軒霆, Full Stack Engineer, .NET Core, Vue.js, Nuxt.js, 資深工程師, 全端開發' },
+        { name: 'keywords', content: 'Oliver Liou, 劉亦剛, Full Stack Engineer, .NET Core, Vue.js, Nuxt.js, 資深工程師, 全端開發' },
         { name: 'author', content: 'Oliver Liou' },
       ],
       link: [
