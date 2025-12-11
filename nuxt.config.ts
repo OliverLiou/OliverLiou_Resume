@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     }
   ],
   app: {
+    baseURL: process.env.NODE_ENV === 'production' ? '/OliverLiou_Resume/' : '/',
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
