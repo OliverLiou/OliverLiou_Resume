@@ -1,85 +1,87 @@
-# Conventional Commits 1.0.0
+# 慣例式提交 Conventional Commits 1.0.0
 
-## 摘要
+## 概述
 
-Conventional Commits 規範是一種基於提交訊息（commit messages）的輕量級約定。它提供了一組簡單的規則來建立明確的提交歷史；這使得在其之上編寫自動化工具變得更加容易。這個約定與 [SemVer](http://semver.org/) 相輔相成，通過在提交訊息中描述功能、修復和破壞性變更。
+慣例式提交規範，是一種對提交說明的輕量慣例。 它提供一些簡單的條件集合用於建立明確的提交歷史； 這能讓自動化工具更容易撰寫。 這份慣例能對應到 [SemVer](https://semver.org/lang/zh-TW/)， 透過在提交說明裡描述功能、修正以及重大變更。
 
-提交訊息的結構如下：
+提交說明應被以下方式建構：
 
 * * * * *
 
 ```
-<類型>[可選的範圍]: <描述>
+<類型 type>[可選的作用範圍 scope]: <描述 description>
 
-[可選的正文]
+[可選的正文 body]
 
-[可選的頁尾]
+[可選的頁腳 footer]
 ```
 
 * * * * *
 
-提交包含以下結構元素，以向您的函式庫使用者傳達意圖：
+提交應包含以下結構性元素，用以向使用這套函式庫的使用者溝通當時的意圖：
 
-1. **fix:** *類型* 為 `fix` 的提交表示修復了程式碼庫中的一個 bug（這與語意化版本控制中的 [`PATCH`](http://semver.org/#summary) 相關）。
-2. **feat:** *類型* 為 `feat` 的提交表示在程式碼庫中引入了一個新功能（這與語意化版本控制中的 [`MINOR`](http://semver.org/#summary) 相關）。
-3. **BREAKING CHANGE:** 在頁尾具有 `BREAKING CHANGE:` 的提交，或者在類型/範圍後附加 `!` 的提交，表示引入了破壞性的 API 變更（與語意化版本控制中的 [`MAJOR`](http://semver.org/#summary) 相關）。BREAKING CHANGE 可以是任何 *類型* 提交的一部分。
-4. 允許使用 `fix:` 和 `feat:` 以外的 *類型*，例如 [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)（基於 [Angular 約定](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)）推薦使用 `build:`、`chore:`、`ci:`、`docs:`、`style:`、`refactor:`、`perf:`、`test:` 等。
-5. *頁尾* 除了 `BREAKING CHANGE: <description>` 之外，還可以提供其他資訊，並遵循類似 [git trailer 格式](https://git-scm.com/docs/git-interpret-trailers) 的約定。
+1. **fix:**  為 `fix` *類型* 的提交，表示對程式修正了一個臭蟲（bug）（對應到語意化版本中的 [`修訂號 PATCH`](https://semver.org/lang/zh-TW/#%E6%91%98%E8%A6%81)）。
+2. **feat:**  為 `feat` *類型* 的提交，表示對程式增加了一個功能（對應到語意化版本中的 [`次版本 MINOR`](https://semver.org/lang/zh-TW/#%E6%91%98%E8%A6%81)）。
+3. **BREAKING CHANGE:**  重大變更，如果提交的頁腳以 `BREAKING CHANGE:` 開頭，或是在類型、作用範圍後有 `!`，代表包含了重大 API 變更（對應到語意化版本中的 [`主版本 MAJOR`](https://semver.org/lang/zh-TW/#%E6%91%98%E8%A6%81)）。 重大變更可以是任何 *類型* 提交的一部分。
+4. 其他: 除 `fix:` 與 `feat:` 以外，其他的提交 *類型* 也是被允許的，例如 [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) (基於 [Angular 慣例](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)) 中推薦的 `chore:`、`docs:`、`style:`、`refactor:`、`perf:`、`test:` 以及更多。
 
-Conventional Commits 規範不強制要求其他類型，並且在語意化版本控制中沒有隱式影響（除非它們包含 BREAKING CHANGE）。可以為提交的類型提供一個範圍（scope），以提供額外的上下文資訊，範圍包含在括號內，例如 `feat(parser): add ability to parse arrays`。
+我們也推薦對那些沒有增加新功能或是修正臭蟲而是改善目前實作的提交使用 `improvement`。 請注意，這些類型在慣例式提交規範中並不是強制性的，且在語意化版本中也沒有隱含的作用 (除非它們包含 BREAKING CHANGE)。
+
+1. 除了 `fix:` 與 `feat:` 之外也允許其他的 *類型* ，如（基於 [Angular 慣例](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)的）[@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) 推薦使用 `build:` 與 `chore:`、 `ci:`、`docs:`、`style:`、`refactor:`、`perf:`、`test:`、等其他。
+2. 也可以使用 `BREAKING CHANGE: <描述>` 之外的 *頁腳* ，並遵守類似 [git trailer format](https://git-scm.com/docs/git-interpret-trailers) 的慣例。
+
+追加類型並不被慣例式提交所束縛，並且不對語義化版本有任何隱藏的影響。（但若包含 BREAKING CHANGE 則不在此限。） 提交的類型可以在括號內給予作用範圍，以提供額外的脈絡資訊。例如：`feat(parser): add ability to parse arrays`。
 
 ## 範例
 
-### 包含描述和破壞性變更頁尾的提交訊息
+### 包含描述以及頁腳有重大變更的提交說明
 
 ```
-feat: allow provided config object to extend other configs
+feat: 允許所提供的配置物件繼承其他配置
 
-BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+BREAKING CHANGE: 配置檔案中的 `extends` 鍵現在用於繼承其他配置檔案
 ```
 
-### 包含 `!` 以引起對破壞性變更注意的提交訊息
+### 包含用以提示重大變更的 `!` 的提交說明
 
 ```
-feat!: send an email to the customer when a product is shipped
+feat!: 在產品出貨時發送電子郵件給客戶
 ```
 
-### 包含範圍和 `!` 以引起對破壞性變更注意的提交訊息
+### 包含作用範圍和提示重大變更的 `!` 的提交說明
 
 ```
-feat(api)!: send an email to the customer when a product is shipped
+feat(api)!: 在產品出貨時發送電子郵件給客戶
 ```
 
-### 同時包含 `!` 和 BREAKING CHANGE 頁尾的提交訊息
+### 包含 `!` 以及頁腳有重大變更的提交說明
 
 ```
-chore!: drop support for Node 6
+chore!: 停止支援 Node 6
 
-BREAKING CHANGE: use JavaScript features not available in Node 6.
+BREAKING CHANGE: 使用 Node 6 不支援的 JavaScript 特性
 ```
 
-### 沒有正文的提交訊息
+### 不包含正文的提交說明
 
 ```
-docs: correct spelling of CHANGELOG
+docs: 修正 CHANGELOG 的拼寫錯誤
 ```
 
-### 包含範圍的提交訊息
+### 包含作用範圍的提交說明
 
 ```
-feat(lang): add Polish language
+feat(lang): 增加波蘭語支援
 ```
 
-### 包含多段落正文和多個頁尾的提交訊息
+### 正文有多段落以及有多個頁腳的提交說明
 
 ```
-fix: prevent racing of requests
+fix: 避免請求競爭
 
-Introduce a request id and a reference to latest request. Dismiss
-incoming responses other than from latest request.
+引入請求 ID 和對最新請求的引用。 駁回除最新請求以外的傳入響應。
 
-Remove timeouts which were used to mitigate the racing issue but are
-obsolete now.
+移除用於緩解競爭問題但現在已過時的超時設置。
 
 Reviewed-by: Z
 Refs: #123
@@ -87,22 +89,29 @@ Refs: #123
 
 ## 規範
 
-本文檔中的關鍵詞 "MUST"、"MUST NOT"、"REQUIRED"、"SHALL"、"SHALL NOT"、"SHOULD"、"SHOULD NOT"、"RECOMMENDED"、"MAY" 和 "OPTIONAL" 應按照 [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) 中的描述進行解釋。
+在本文中使用的關鍵字：MUST、MUST NOT、REQUIRED、SHALL、SHALL NOT、SHOULD、SHOULD NOT、RECOMMENDED、MAY、以及 OPTIONAL 應以 [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) 為參考解釋。
 
-1. 提交必須以類型為前綴，類型由名詞 `feat`、`fix` 等組成，後跟可選的範圍、可選的 `!` 以及必要的冒號和空格。
-2. 當提交為您的應用程式或函式庫添加新功能時，必須使用類型 `feat`。
-3. 當提交代表您的應用程式的錯誤修復時，必須使用類型 `fix`。
-4. 類型後可以提供一個範圍。範圍必須由描述程式碼庫部分的各詞組成，並用括號括起來，例如 `fix(parser):`。
-5. 描述必須緊跟在類型/範圍前綴後的冒號和空格之後。描述是對程式碼變更的簡短總結，例如 *fix: array parsing issue when multiple spaces were contained in string*。
-6. 簡短描述之後可以提供較長的提交正文，以提供有關程式碼變更的額外上下文資訊。正文必須在描述之後空一行開始。
-7. 提交正文是自由格式的，可以由任意數量的以換行符分隔的段落組成。
-8. 正文之後空一行可以提供一個或多個頁尾。每個頁尾必須由一個單詞標記組成，後跟 `:<空格>` 或 `<空格>#` 分隔符，再後跟字串值（這受到 [git trailer 約定](https://git-scm.com/docs/git-interpret-trailers) 的啟發）。
-9. 頁尾的標記必須使用 `-` 來代替空白字符，例如 `Acked-by`（這有助於區分頁尾部分和多段落正文）。`BREAKING CHANGE` 是一個例外，它也可以用作標記。
-10. 頁尾的值可以包含空格和換行符，並且在觀察到下一個有效的頁尾標記/分隔符對時必須終止解析。
-11. 破壞性變更必須在提交的類型/範圍前綴中指出，或者作為頁尾中的條目指出。
-12. 如果作為頁尾包含，破壞性變更必須由大寫文本 BREAKING CHANGE 組成，後跟冒號、空格和描述，例如 *BREAKING CHANGE: environment variables now take precedence over config files*。
-13. 如果包含在類型/範圍前綴中，破壞性變更必須通過緊接在 `:` 之前的 `!` 來指示。如果使用了 `!`，則可以從頁尾部分省略 `BREAKING CHANGE:`，並且應使用提交描述來描述破壞性變更。
-14. 在您的提交訊息中可以使用 `feat` 和 `fix` 以外的類型，例如 *docs: update ref docs.*。
-15. 構成 Conventional Commits 的資訊單元在實作時不得區分大小寫，但 BREAKING CHANGE 必須為大寫。
-16. 當用作頁尾中的標記時，BREAKING-CHANGE 必須與 BREAKING CHANGE 同義。
-17. 描述必須使用繁體中文 (zh-tw) 撰寫。
+1. 每個提交最前面「必須 MUST」要有類型，類型由名詞組成，例如：`feat`、`fix` 等，後接上「可選的 OPTIONAL」作用範圍以及「必要的 REQUIRED」一個冒號與空格。
+2. 當提交一個新功能到你的應用程式或是函式庫時，「必須 MUST」使用 `feat` 類型。
+3. 當提交一個臭蟲修正到你的應用程式時，「必須 MUST」使用 `fix` 類型。
+4. 類型之後「可以 MAY」加上作用範圍。個別作用範圍「必須 MUST」由一個描述程式區段的名詞所組成，並用括號包覆。例如： `fix(parser):`
+5. 描述「必須 MUST」緊鄰在類型／作用範圍後的冒號與空格。 描述是對於程式碼修改的簡短總結，如 *fix: array parsing issue when multiple spaces were contained in string* 。
+6. 在簡短的描述後「可以 MAY」加上更長的提交正文，提供關於對程式碼變更的額外脈絡資訊。正文「必須 MUST」在描述後的一個空行之後開始。
+7. 提交正文為自由格式，並「可以 MAY」有數個以換行字元區分的段落。
+8. 在正文後「可以 MAY」有一個或多個頁腳，頁腳在正文後空行之後開始。 每個頁腳「必須 MUST」包含一個符記 (token) ，並接着以 `:<space>` 或 `<space>#` 分隔，再緊鄰一個字串值。 （本處靈感係源自於 [git trailer convention](https://git-scm.com/docs/git-interpret-trailers)。）
+9. 頁腳的符記「必須 MUST」使用 `-` 作為空白字元，如 `Acked-by` （這有助於區分出頁腳與多段落的正文）。 但 `BREAKING CHANGE` 則為例外，且也「可以 MAY」作為符記使用。
+10. 頁腳的值「可以 MAY」包含空白與換行，解析時「必須 MUST」在遇到下一組有效的符記／分隔時停止。
+11. 重大變更「必須 MUST作為提交中的類型／作用範圍的前綴，或是在頁腳中作為一個段落存在。
+12. 若放置於頁腳，重大變更「必須 MUST」維持大寫文字 BREAKING CHANGE，而後緊鄰一個分號、空白、並接着描述。如： *BREAKING CHANGE: environment variables now take precedence over config files* 。
+13. 若作為類型／作用範圍的前綴，重大變更「必須 MUST」以一個 `!` 識別，並緊鄰於 `:` 之前。若使用 `!`， 頁腳段落的 `BREAKING CHANGE:` 則「可以 MAY」被省略，且提交說明「應當 SHALL」用來描述重大變更。
+14. 除了 `feat` 與 `fix` 以外的類型「可以 MAY」被用於提交訊息內，如： *docs: updated ref docs* 。
+15. 組成慣例式提交資訊的單位在實作時除了大寫的 `BREAKING CHANGE` 外，「禁止 MUST NOT」區分大小寫。
+16. 在作為頁腳符記時，BREAKING-CHANGE「必須 MUST」與 BREAKING CHANGE 視為相同的。
+
+## 為何要使用慣例式提交
+
+- 自動產生修改日誌 (Changelog)。
+- 基於提交的類型，自動決定語意化版本的升級。
+- 向同事、公眾以及其他的利益相關者傳達變化的過程。
+- 觸發建置與發布流程。
+- 讓大家探索更有結構的提交歷史，使你的專案更容易被貢獻。
