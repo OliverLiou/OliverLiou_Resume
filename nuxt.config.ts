@@ -36,10 +36,6 @@ export default defineNuxtConfig({
         { name: 'keywords', content: 'Oliver Liou, 劉亦剛, Full Stack Engineer, .NET Core, Vue.js, Nuxt.js, 資深工程師, 全端開發' },
         { name: 'author', content: 'Oliver Liou' },
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        // { rel: 'canonical', href: 'https://oliverliou.github.io/OliverLiou_Resume/' }
-      ],
       htmlAttrs: {
         lang: 'zh-TW'
       }

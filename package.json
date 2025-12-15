@@ -23,8 +23,14 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@iconify-json/devicon": "^1.2.53",
+    "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/logos": "^1.2.10",
     "@iconify-json/lucide": "^1.2.73",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.63",
+    "@iconify-json/streamline": "^1.2.5",
+    "@iconify-json/vscode-icons": "^1.2.37",
     "@types/node": "^25.0.0"
   }
 }
