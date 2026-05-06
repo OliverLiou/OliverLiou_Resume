@@ -1,10 +1,11 @@
 <template>
   <div>
-    <IntroSection />
-    <SkillsSection />
-    <ExperienceSection />
-    <ProjectsSection />
-    <EducationSection />
+    <!-- <IntroSection /> -->
+    <!-- <SkillsSection /> -->
+    <AiSection />
+    <!-- <ExperienceSection /> -->
+    <!-- <ProjectsSection /> -->
+    <!-- <EducationSection /> -->
   </div>
 </template>
 

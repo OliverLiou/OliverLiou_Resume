@@ -5,7 +5,8 @@
     "skills": "Skills",
     "experience": "Experience",
     "projects": "Projects",
-    "education": "Education"
+    "education": "Education",
+    "ai": "AI Collaboration"
   },
   "intro": {
     "title": "About Me",
@@ -25,7 +26,8 @@
     "skills": "Skills",
     "experience": "Work Experience",
     "projects": "Projects",
-    "education": "Education"
+    "education": "Education",
+    "ai": "AI"
   },
   "experience": {
     "title": "Experience",
@@ -49,6 +51,27 @@
     "degree": "Degree",
     "thesis": "Thesis",
     "viewThesis": "View Thesis"
+  },
+  "ai": {
+    "caseStudy": "AI Case Studies",
+    "tabs": {
+      "agents": "Custom Agents",
+      "specDriven": "Spec-Driven Dev Flow",
+      "knowledge": "Knowledge & Content"
+    },
+    "agents": {
+      "demo": "Demo",
+      "sourceFile": "View Source File",
+      "demoComingSoon": "Demo coming soon"
+    },
+    "spec": {
+      "artifact": "Artifact"
+    },
+    "knowledge": {
+      "input": "Input",
+      "tools": "Tools Used",
+      "output": "Output"
+    }
   },
   "footer": {
     "copyright": "© {year} {name}. All rights reserved.",

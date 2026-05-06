@@ -5,7 +5,8 @@
     "skills": "專業技能",
     "experience": "工作經歷",
     "projects": "專案經驗",
-    "education": "教育背景"
+    "education": "教育背景",
+    "ai": "AI協作"
   },
   "intro": {
     "title": "關於我",
@@ -25,7 +26,8 @@
     "skills": "專業技能",
     "experience": "工作經歷",
     "projects": "專案經驗",
-    "education": "教育背景"
+    "education": "教育背景",
+    "ai": "AI協作"
   },
   "experience": {
     "title": "工作經歷",
@@ -49,6 +51,27 @@
     "degree": "學歷",
     "thesis": "論文",
     "viewThesis": "查看論文"
+  },
+  "ai": {
+    "caseStudy": "AI 實務案例",
+    "tabs": {
+      "agents": "自訂代理人",
+      "specDriven": "規格驅動開發流程",
+      "knowledge": "知識整理與內容產出"
+    },
+    "agents": {
+      "demo": "範例展示",
+      "sourceFile": "查看原始檔案",
+      "demoComingSoon": "範例展示即將推出"
+    },
+    "spec": {
+      "artifact": "Artifact"
+    },
+    "knowledge": {
+      "input": "Input",
+      "tools": "使用工具",
+      "output": "成品"
+    }
   },
   "footer": {
     "copyright": "© {year} {name}. 版權所有。",

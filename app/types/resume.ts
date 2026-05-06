@@ -82,6 +82,39 @@ export interface Education {
   thesis?: Thesis
 }
 
+// AI Section
+export interface AiCapabilityItem {
+  title: string
+  icon?: string
+  items: string[]
+}
+
+export interface AiChangelogEntry {
+  date: string
+  title: string
+  description: string
+}
+
+export interface AiSpecStep {
+  label: string     // locale text, e.g. '協作原則'
+  sublabel: string  // English key, e.g. 'constitution'
+  link?: string     // artifact URL; undefined = no link shown
+}
+
+export interface AiKnowledgeTopic {
+  name: string
+  input?: string
+  tools?: string
+  outputLink?: string  // img src; empty = hidden
+}
+
+export interface AiApplicationData {
+  capabilities: AiCapabilityItem[]
+  conventionalCommitsDemo: AiChangelogEntry[]
+  specDrivenSteps: AiSpecStep[]
+  knowledgeTopics: AiKnowledgeTopic[]
+}
+
 // Store State
 export interface ResumeState {
   profile: Profile | null
@@ -89,6 +122,7 @@ export interface ResumeState {
   skills: Skills | null
   projects: Project[]
   education: Education[]
+  ai: AiApplicationData
 }
 
 // UI Component Types

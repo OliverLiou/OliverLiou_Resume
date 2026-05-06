@@ -277,4 +277,57 @@ export const resumeDataEn: ResumeState = {
       },
     },
   ],
+  ai: {
+    capabilities: [
+      {
+        title: 'AI-Assisted Development',
+        icon: 'lucide:bot',
+        items: [
+          'Familiar with GitHub Copilot CLI, applying it to requirement breakdown, coding, and technical documentation.',
+          'Adopts a Spec-driven approach, clarifying specifications and requirement boundaries before implementation to enhance delivery consistency.',
+          'Integrates AI into engineering workflows to shorten iteration cycles from requirement understanding to implementation delivery.',
+        ],
+      },
+      {
+        title: 'AI Productivity',
+        icon: 'lucide:sparkles',
+        items: [
+          'Uses AI for document organization, article and video summarization, and key point extraction to accelerate knowledge absorption.',
+          'Leverages AI to assist with presentation structure planning, content polishing, and visual asset generation to enhance proposal quality.',
+          'Possesses AI image generation capabilities, producing visual assets based on contextual requirements.',
+        ],
+      },
+    ],
+    conventionalCommitsDemo: [
+      {
+        date: '2025-05-01',
+        title: 'feat(auth): add JWT-based user login',
+        description: 'Implemented JWT authentication flow with access token issuance and refresh token rotation to ensure login security.',
+      },
+      {
+        date: '2025-04-28',
+        title: 'fix(api): correct index out-of-bounds in pagination',
+        description: 'Pagination logic did not handle empty arrays, causing an IndexOutOfRange exception when the record count was zero.',
+      },
+      {
+        date: '2025-04-20',
+        title: 'refactor(store): rewrite Pinia store to Composition API',
+        description: 'Rewrote Options API stores to setup stores, improving type inference and aligning coding style with components.',
+      },
+    ],
+    specDrivenSteps: [
+      { label: 'Principles', sublabel: 'constitution', link: '#' },
+      { label: 'Requirements', sublabel: 'specify', link: '#' },
+      { label: 'Clarification', sublabel: 'clarify' },
+      { label: 'Plan', sublabel: 'plan', link: '#' },
+      { label: 'Task Breakdown', sublabel: 'tasks' },
+      { label: 'Analysis', sublabel: 'analyze' },
+      { label: 'Implementation', sublabel: 'implement', link: '#' },
+    ],
+    knowledgeTopics: [
+      { name: 'Summarization', input: undefined, tools: undefined, outputLink: undefined },
+      { name: 'Slide Planning', input: undefined, tools: undefined, outputLink: undefined },
+      { name: 'Image & Content Generation', input: undefined, tools: undefined, outputLink: undefined },
+    ],
+  },
 }

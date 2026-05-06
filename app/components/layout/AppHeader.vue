@@ -49,6 +49,11 @@ const navigationItems = computed<NavigationMenuItem[][]>(() => [
       to: '#skills',
     },
     {
+      value: 'ai',
+      label: t('nav.ai'),
+      to: '#ai',
+    },
+    {
       value: 'experience', 
       label: t('nav.experience'), 
       to: '#experience',

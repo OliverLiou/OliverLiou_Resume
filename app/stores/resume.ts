@@ -35,6 +35,8 @@ export const useResumeStore = defineStore('resume', () => {
     return education.value
   })
 
+  const aiApplication = computed(() => resumeData.value.ai)
+
   return {
     // State
     profile,
@@ -42,6 +44,7 @@ export const useResumeStore = defineStore('resume', () => {
     skills,
     projects,
     education,
+    aiApplication,
 
     // Getters
     sortedExperiences,

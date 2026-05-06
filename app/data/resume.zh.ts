@@ -277,4 +277,57 @@ export const resumeDataZh: ResumeState = {
       },
     },
   ],
+  ai: {
+    capabilities: [
+      {
+        title: 'AI 協作開發',
+        icon: 'lucide:bot',
+        items: [
+          '熟悉 GitHub Copilot CLI，應用於需求拆解、程式開發與技術文件。',
+          '採 Spec-driven 方式，先釐清規格與需求邊界，再進入實作，提升交付一致性。',
+          '將 AI 融入工程流程，縮短從需求理解到實作交付的迭代週期。',
+        ],
+      },
+      {
+        title: 'AI 生產力應用',
+        icon: 'lucide:sparkles',
+        items: [
+          '透過 AI 整理文件、摘要影片與提煉重點，加速知識吸收。',
+          '透過 AI 輔助的美化與排版，提升整體簡報品質。',
+          '具備 AI 生圖能力，可依情境產出視覺素材。',
+        ],
+      },
+    ],
+    conventionalCommitsDemo: [
+      {
+        date: '2025-05-01',
+        title: 'feat(auth): 新增使用者 JWT 登入功能',
+        description: '實作基於 JWT 的身份驗證流程，包含 access token 發放與 refresh token 輪替機制，確保登入安全性。',
+      },
+      {
+        date: '2025-04-28',
+        title: 'fix(api): 修正分頁查詢索引越界錯誤',
+        description: '當資料筆數為零時，分頁計算未對空陣列做邊界檢查，導致 IndexOutOfRange 例外。',
+      },
+      {
+        date: '2025-04-20',
+        title: 'refactor(store): 重構 Pinia store 為 Composition API 風格',
+        description: '將 Options API 形式的 store 改寫為 setup store，提升型別推導能力並統一程式風格。',
+      },
+    ],
+    specDrivenSteps: [
+      { label: '協作原則', sublabel: 'constitution', link: '#' },
+      { label: '需求規格', sublabel: 'specify', link: '#' },
+      { label: '需求釐清', sublabel: 'clarify' },
+      { label: '實作計畫', sublabel: 'plan', link: '#' },
+      { label: '任務拆解', sublabel: 'tasks' },
+      { label: '結構分析', sublabel: 'analyze' },
+      { label: '功能實作', sublabel: 'implement', link: '#' },
+    ],
+    knowledgeTopics: [
+      { name: '摘要整理', input: undefined, tools: undefined, outputLink: undefined },
+      { name: '簡報規劃', input: undefined, tools: undefined, outputLink: undefined },
+      { name: '圖文生成', input: undefined, tools: undefined, outputLink: undefined },
+    ],
+  },
 }
