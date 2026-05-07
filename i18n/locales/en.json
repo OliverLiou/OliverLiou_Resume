@@ -62,7 +62,9 @@
     "agents": {
       "demo": "Demo",
       "sourceFile": "View Source File",
-      "demoComingSoon": "Demo coming soon"
+      "demoComingSoon": "Demo coming soon",
+      "conventionalCommitsDesc": "Generates standardized Git commit messages following the Conventional Commits 1.0.0 spec — enabling semantic versioning, automated changelogs, and a clear, machine-readable project history.",
+      "vueDocDesc": "Analyzes Vue/Nuxt file logic and generates standardized technical Markdown documentation."
     },
     "spec": {
       "artifact": "Artifact"

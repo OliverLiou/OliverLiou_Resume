@@ -62,7 +62,9 @@
     "agents": {
       "demo": "範例展示",
       "sourceFile": "查看原始檔案",
-      "demoComingSoon": "範例展示即將推出"
+      "demoComingSoon": "範例展示即將推出",
+      "conventionalCommitsDesc": "依照 Conventional Commits 1.0.0 規範自動生成標準化的 Git commit 訊息，助力語意化版本控制、自動化 changelog 產出，讓專案歷程清晰且易於機器解析。",
+      "vueDocDesc": "分析 Vue/Nuxt 檔案邏輯並產出標準化的技術Markdown文件 "
     },
     "spec": {
       "artifact": "Artifact"

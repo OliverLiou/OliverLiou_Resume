@@ -40,7 +40,7 @@
         <UTabs
           :items="caseStudyTabs"
           variant="pill"
-          color="neutral"
+          color="primary"
           class="w-full"
         >
           <!-- Tab 1: Custom Agents -->
@@ -52,14 +52,31 @@
               variant="link"
               color="primary"
               class="mt-4"
-              :ui="{ list: 'min-w-32' }"
+              :ui="{ list: 'min-w-32 self-start' }"
             >
+              <template #default="{ item }">
+                <UTooltip :text="item.label">
+                  <span class="truncate">{{ item.label }}</span>
+                </UTooltip>
+              </template>
               <!-- conventional-commits -->
               <template #conventional-commits>
                 <div class="space-y-6 px-2">
+                  <!-- Agent description -->
+                  <UPageCard
+                    icon="lucide:git-commit-vertical"
+                    title="Conventional-Commits"
+                    variant="subtle"
+                    to="https://github.com/OliverLiou/personal-ai-kit/blob/main/.github/agents/conventional-commits.agents.md"
+                    target="_blank"
+                    :description=" t('ai.agents.conventionalCommitsDesc')"
+                  />
+
+                  <USeparator />
+
                   <!-- Demo: UChangelogVersions -->
                   <div>
-                    <UChangelogVersions>
+                    <UChangelogVersions :indicator-motion="false">
                       <UChangelogVersion
                         v-for="entry in conventionalCommitsDemo"
                         :key="entry.title"
@@ -70,32 +87,27 @@
                       />
                     </UChangelogVersions>
                   </div>
-
-                  <USeparator />
-
-                  <!-- Agent Info Card -->
-                  <UPageCard
-                    v-bind="conventionalCommitsCard"
-                    :ui="{ title: 'font-mono text-base' }"
-                  />
                 </div>
               </template>
 
               <!-- vue-doc -->
               <template #vue-doc>
                 <div class="space-y-6 px-2">
-                  <!-- Demo placeholder -->
+                  <UPageCard
+                    icon="i-ph-file-vue-duotone"
+                    title="vue-doc"
+                    variant="subtle"
+                    to="https://github.com/OliverLiou/personal-ai-kit/blob/main/.github/agents/vue-doc.agents.md"
+                    target="_blank"
+                    :description=" t('ai.agents.vueDocDesc')"
+                  />
+                  
+                  <USeparator />
+                  
                   <div class="rounded-lg border border-dashed border-gray-300 dark:border-gray-700 p-8 text-center text-sm text-gray-400 dark:text-gray-500">
                     {{ t('ai.agents.demoComingSoon') }}
                   </div>
-
-                  <USeparator />
-
-                  <!-- Agent Info Card -->
-                  <UPageCard
-                    v-bind="vueDocCard"
-                    :ui="{ title: 'font-mono text-base' }"
-                  />
+                  
                 </div>
               </template>
             </UTabs>
@@ -188,39 +200,8 @@ const caseStudyTabs = computed(() => [
 // Nested agent tabs
 const agentTabs = [
   { label: 'conventional-commits', slot: 'conventional-commits', value: 'conventional-commits' },
-  { label: 'vue-doc',              slot: 'vue-doc',              value: 'vue-doc' },
+  { label: 'vue-doc', slot: 'vue-doc', value: 'vue-doc' },
 ]
-
-// Hardcoded agent cards (language-neutral — sourced from YAML)
-const conventionalCommitsCard = {
-  title: 'conventional-commits',
-  description: 'Use this agent when the user asks to generate or help write a Git commit message following Conventional Commits 1.0.0 specification.',
-  links: [
-    {
-      label: t('ai.agents.sourceFile'),
-      to: 'https://github.com/OliverLiou/personal-ai-kit/blob/main/.github/agents/conventional-commits.agents.md',
-      target: '_blank',
-      icon: 'lucide:external-link',
-      color: 'neutral' as const,
-      variant: 'outline' as const,
-    },
-  ],
-}
-
-const vueDocCard = {
-  title: 'vue-doc',
-  description: '分析 Vue/Nuxt 檔案邏輯並產出標準化的技術文件 (*.md)',
-  links: [
-    {
-      label: t('ai.agents.sourceFile'),
-      to: 'https://github.com/OliverLiou/personal-ai-kit/blob/main/.github/agents/vue-doc.agent.md',
-      target: '_blank',
-      icon: 'lucide:external-link',
-      color: 'neutral' as const,
-      variant: 'outline' as const,
-    },
-  ],
-}
 
 // Spec-driven stepper
 const activeStep = ref(0)
@@ -235,7 +216,7 @@ const activeAgent = ref('conventional-commits')
 const stepperItems = computed(() =>
   (ai.value?.specDrivenSteps ?? []).map(step => ({
     title: step.label,
-    description: step.sublabel,
+    // description: step.sublabel,
     link: step.link,
   }))
 )

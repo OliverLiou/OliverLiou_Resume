@@ -97,7 +97,6 @@ export interface AiChangelogEntry {
 
 export interface AiSpecStep {
   label: string     // locale text, e.g. '協作原則'
-  sublabel: string  // English key, e.g. 'constitution'
   link?: string     // artifact URL; undefined = no link shown
 }
 
