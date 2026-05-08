@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules:['@nuxt/ui', '@nuxt/icon', '@nuxtjs/i18n', '@pinia/nuxt'],
+  modules:['@nuxt/ui', '@nuxt/icon', '@nuxtjs/i18n', '@pinia/nuxt', '@nuxtjs/mdc'],
   css: ['./app/assets/css/main.css'],
   vite: {
     plugins: [

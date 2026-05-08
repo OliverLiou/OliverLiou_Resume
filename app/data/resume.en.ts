@@ -316,13 +316,46 @@ export const resumeDataEn: ResumeState = {
       },
     ],
     specDrivenSteps: [
-      { label: 'constitution', link: '#' },
-      { label: 'specify', link: '#' },
-      { label: 'clarify' },
-      { label: 'plan', link: '#' },
-      { label: 'tasks' },
-      { label: 'analyze' },
-      { label: 'implement', link: '#' },
+      {
+        key: 'constitution',
+        label: 'Constitution',
+        description: 'Define the fundamental rules and boundaries for AI collaboration across the entire development process.',
+        markdownUrl: '',
+      },
+      {
+        key: 'specify',
+        label: 'Specify',
+        description: 'Write structured specifications so both AI and humans clearly understand scope, goals, and acceptance criteria.',
+        markdownUrl: '',
+      },
+      {
+        key: 'clarify',
+        label: 'Clarify',
+        description: 'Resolve ambiguities through structured Q&A to align understanding before moving forward.',
+      },
+      {
+        key: 'plan',
+        label: 'Plan',
+        description: 'Generate a concrete implementation plan with ordered steps, technical decisions, and expected deliverables.',
+        markdownUrl: '',
+      },
+      {
+        key: 'tasks',
+        label: 'Tasks',
+        description: 'Break the plan into independent, trackable task units for incremental execution and verification.',
+      },
+      {
+        key: 'analyze',
+        label: 'Analyze',
+        description: 'Analyze existing code structure and dependencies to ensure implementation aligns with the current architecture.',
+      },
+      {
+        key: 'implement',
+        label: 'Implement',
+        description: 'Deliver the actual implementation with AI-assisted coding and human review. View the live result directly.',
+        cardImage: '',
+        cardLink: '',
+      },
     ],
     knowledgeTopics: [
       { name: 'Summarization', input: undefined, tools: undefined, outputLink: undefined },

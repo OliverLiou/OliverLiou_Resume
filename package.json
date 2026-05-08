@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "@nuxt/icon": "^2.1.0",
-    "@nuxt/ui": "^4.1.0",
+    "@nuxt/ui": "^4.7.1",
     "@nuxtjs/i18n": "^10.2.0",
+    "@nuxtjs/mdc": "^0.21.1",
     "@pinia/nuxt": "^0.11.3",
     "@tailwindcss/vite": "^4.1.17",
     "nuxt": "^4.2.1",

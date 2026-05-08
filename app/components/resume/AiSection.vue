@@ -125,16 +125,69 @@
                 @update:model-value="onStepChange"
               >
                 <template #content="{ item }">
-                  <div v-if="item.link" class="flex justify-center mt-2">
-                    <UButton
-                      :to="item.link"
-                      target="_blank"
-                      size="xs"
-                      variant="outline"
-                      color="primary"
-                      :label="t('ai.spec.artifact')"
-                      leading-icon="lucide:external-link"
-                    />
+                  <div class="mt-4 space-y-4 pb-6 px-1">
+
+                    <!-- Step header (locale-aware) -->
+                    <div>
+                      <p class="font-semibold text-highlighted">{{ item.label }}</p>
+                      <USeparator class="my-2" />
+                      <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">{{ item.detail }}</p>
+                    </div>
+
+                    <!-- Markdown section (constitution / specify / plan) -->
+                    <template v-if="item.markdownUrl !== undefined">
+                      <!-- Real content: fetched + parsed -->
+                      <UScrollArea
+                        v-if="item.markdownUrl && markdownCache[item.key]"
+                        class="h-72 rounded-xl border border-muted px-5 py-3"
+                      >
+                        <MDCRenderer :body="markdownCache[item.key]!.body" :data="markdownCache[item.key]!.data" class="prose dark:prose-invert max-w-none" />
+                      </UScrollArea>
+                      <!-- Loading: URL set but not yet parsed -->
+                      <USkeleton
+                        v-else-if="item.markdownUrl && !markdownCache[item.key]"
+                        class="h-72 rounded-xl"
+                      />
+                      <!-- Placeholder: URL not set yet -->
+                      <div
+                        v-else
+                        class="h-64 rounded-xl border border-dashed border-muted bg-muted/20 flex flex-col items-center justify-center gap-2"
+                      >
+                        <UIcon name="lucide:file-text" class="size-8 opacity-40" />
+                        <p class="text-sm text-muted">{{ t('ai.spec.docComingSoon') }}</p>
+                      </div>
+                    </template>
+
+                    <!-- Implement card (implement step only) -->
+                    <template v-if="item.cardLink !== undefined">
+                      <UCard :ui="{ body: 'p-0', footer: 'px-4 py-3' }">
+                        <div class="aspect-video rounded-t-xl overflow-hidden bg-muted/30">
+                          <img
+                            v-if="item.cardImage"
+                            :src="item.cardImage"
+                             :alt="item.label"
+                            class="w-full h-full object-cover"
+                          />
+                          <div v-else class="w-full h-full flex flex-col items-center justify-center gap-2 text-muted">
+                            <UIcon name="lucide:image" class="size-10 opacity-30" />
+                            <p class="text-xs opacity-50">{{ t('ai.spec.previewComingSoon') }}</p>
+                          </div>
+                        </div>
+                        <template #footer>
+                          <UButton
+                            :to="item.cardLink || '#'"
+                            :disabled="!item.cardLink"
+                            target="_blank"
+                            variant="outline"
+                            size="sm"
+                            leading-icon="lucide:external-link"
+                          >
+                            {{ t('ai.spec.viewImpl') }}
+                          </UButton>
+                        </template>
+                      </UCard>
+                    </template>
+
                   </div>
                 </template>
               </UStepper>
@@ -213,11 +266,34 @@ function onStepChange(val: string | number | undefined) {
 // Active agent tab
 const activeAgent = ref('conventional-commits')
 
+// Markdown cache: key → parsed AST (null = loading, undefined = not started)
+const markdownCache = reactive<Record<string, Awaited<ReturnType<typeof parseMarkdown>> | null>>({})
+
+async function fetchStepMarkdown(key: string, url: string) {
+  if (key in markdownCache) return
+  markdownCache[key] = null
+  try {
+    const raw = await $fetch<string>(url)
+    markdownCache[key] = await parseMarkdown(raw)
+  } catch {
+    delete markdownCache[key]
+  }
+}
+
 const stepperItems = computed(() =>
   (ai.value?.specDrivenSteps ?? []).map(step => ({
     title: step.label,
-    // description: step.sublabel,
-    link: step.link,
+    key: step.key,
+    label: step.label,
+    detail: step.description,
+    markdownUrl: step.markdownUrl,
+    cardImage: step.cardImage,
+    cardLink: step.cardLink,
   }))
 )
+
+watch(activeStep, (idx) => {
+  const item = stepperItems.value[idx]
+  if (item?.markdownUrl) fetchStepMarkdown(item.key, item.markdownUrl)
+}, { immediate: true })
 </script>

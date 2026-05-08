@@ -67,7 +67,10 @@
       "vueDocDesc": "Analyzes Vue/Nuxt file logic and generates standardized technical Markdown documentation."
     },
     "spec": {
-      "artifact": "Artifact"
+      "artifact": "Artifact",
+      "viewImpl": "View Implementation",
+      "docComingSoon": "Document coming soon",
+      "previewComingSoon": "Preview coming soon"
     },
     "knowledge": {
       "input": "Input",

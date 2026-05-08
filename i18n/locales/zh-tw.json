@@ -67,7 +67,10 @@
       "vueDocDesc": "分析 Vue/Nuxt 檔案邏輯並產出標準化的技術Markdown文件 "
     },
     "spec": {
-      "artifact": "Artifact"
+      "artifact": "Artifact",
+      "viewImpl": "查看成品",
+      "docComingSoon": "文件準備中",
+      "previewComingSoon": "成品圖片準備中"
     },
     "knowledge": {
       "input": "Input",

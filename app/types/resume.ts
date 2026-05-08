@@ -96,8 +96,15 @@ export interface AiChangelogEntry {
 }
 
 export interface AiSpecStep {
-  label: string     // locale text, e.g. '協作原則'
-  link?: string     // artifact URL; undefined = no link shown
+  key: string
+  label: string
+  description: string
+  /** '' = show placeholder; actual URL = fetch & render via MDCRenderer; undefined = no markdown section */
+  markdownUrl?: string
+  /** implement step: thumbnail image URL ('' = image placeholder) */
+  cardImage?: string
+  /** implement step: external link URL ('' = link placeholder) */
+  cardLink?: string
 }
 
 export interface AiKnowledgeTopic {
