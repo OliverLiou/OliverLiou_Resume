@@ -1,6 +1,14 @@
 import hcmfLogo from '/assets/images/HCMF_SimpleLogo.png'
 import profilePicture from '/assets/images/ProfilePicture.jpg'
 import mustLogo from '/assets/images/MUST_LOGO.png'
+import _01 from '/assets/images/01_constitution.jpg'
+import _02 from '/assets/images/02_specify.jpg'
+import _03 from '/assets/images/03_clarify.jpg'
+import _04 from '/assets/images/04_plan.jpg'
+import _05 from '/assets/images/05_tasks.jpg'
+import _06 from '/assets/images/06_analyze.jpg'
+import _07 from '/assets/images/07_implement.jpg'
+
 
 import type { ResumeState } from '~/types/resume'
 
@@ -320,41 +328,75 @@ export const resumeDataZh: ResumeState = {
         key: 'constitution',
         label: '協作原則',
         description: '定義 AI 協作的基本規範與邊界，確保整個開發過程有共同遵守的原則與行為準則。',
-        markdownUrl: '',
+        markdownUrl: 'https://github.com/OliverLiou/dashboard-sdd/blob/master/sdd-docs/constitution.md',
+        image: _01,
+        highlights: [
+          '專案定位與架構原則',
+          '相依性與套件管理',
+          '前端工程與元件規範',
+          '資料流、狀態管理與型別安全',
+          '品質保證與文件規範',
+        ],
       },
       {
         key: 'specify',
         label: '規格描述',
         description: '以結構化方式撰寫需求規格，讓 AI 與人類都能清楚理解目標範圍與驗收條件。',
-        markdownUrl: '',
+        markdownUrl: 'https://github.com/OliverLiou/dashboard-sdd/blob/master/sdd-docs/specify.md',
+        image: _02,
+        highlights: [
+          'Header 元件實作規範',
+          'Footer 元件實作規範',
+          'Sidebar 元件實作規範',
+          'Breadcrumb 元件實作規範',
+          'Nuxt UI 元件查詢要求',
+          '版本對齊要求',
+          'TypeScript 對齊原則',
+          'Navigation Menu 生成方式',
+          'NavigationItem 子選單支援',
+          '主題切換機制',
+          '版權年份與 Plugin 注入',
+          'Layout 檔案位置規範',
+          'app.vue 載入要求',
+        ],
       },
       {
         key: 'clarify',
         label: '需求釐清',
         description: '透過問答互動釐清模糊需求，消除歧義、對齊認知後再進入下一階段。',
+        image: _03,
       },
       {
         key: 'plan',
         label: '建立計畫',
         description: '依據規格產出具體的實作計畫，包含步驟順序、技術決策與預期交付範圍。',
-        markdownUrl: '',
+        markdownUrl: 'https://github.com/OliverLiou/dashboard-sdd/blob/master/sdd-docs/plan.md',
+        image: _04,
+        highlights: [
+          '任務目標',
+          '樣板參考',
+          '整體結構 (Layout Structure)',
+          '區域詳細規格 (Component Specs)',
+          '技術限制',
+        ],
       },
       {
         key: 'tasks',
         label: '任務拆解',
         description: '將計畫細化為可獨立執行的任務單元，便於追蹤進度與逐項驗收。',
+        image: _05,
       },
       {
         key: 'analyze',
         label: '結構分析',
         description: '分析現有程式碼結構與依賴關係，確保實作方向與既有架構一致、不引入破壞性變更。',
+        image: _06,
       },
       {
         key: 'implement',
         label: '功能實作',
         description: '完成實際程式碼交付，AI 協助實作、人工審查把關，可直接查看線上成品。',
-        cardImage: '',
-        cardLink: '',
+        image: _07,
       },
     ],
     knowledgeTopics: [

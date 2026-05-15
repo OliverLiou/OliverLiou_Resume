@@ -67,10 +67,22 @@
                     icon="lucide:git-commit-vertical"
                     title="Conventional-Commits"
                     variant="subtle"
-                    to="https://github.com/OliverLiou/personal-ai-kit/blob/main/.github/agents/conventional-commits.agents.md"
-                    target="_blank"
-                    :description=" t('ai.agents.conventionalCommitsDesc')"
-                  />
+                    :description="t('ai.agents.conventionalCommitsDesc')"
+                  >
+                    <template #footer>
+                      <div class="flex justify-end">
+                        <UButton
+                          to="https://github.com/OliverLiou/personal-ai-kit/blob/main/.github/agents/conventional-commits.agents.md"
+                          target="_blank"
+                          variant="solid"
+                          color="neutral"
+                          trailing-icon="lucide:external-link"
+                        >
+                          {{ t('ai.agents.sourceFile') }}
+                        </UButton>
+                      </div>
+                    </template>
+                  </UPageCard>
 
                   <USeparator />
 
@@ -97,10 +109,22 @@
                     icon="i-ph-file-vue-duotone"
                     title="vue-doc"
                     variant="subtle"
-                    to="https://github.com/OliverLiou/personal-ai-kit/blob/main/.github/agents/vue-doc.agents.md"
-                    target="_blank"
-                    :description=" t('ai.agents.vueDocDesc')"
-                  />
+                    :description="t('ai.agents.vueDocDesc')"
+                  >
+                    <template #footer>
+                      <div class="flex justify-end">
+                        <UButton
+                          to="https://github.com/OliverLiou/personal-ai-kit/blob/main/.github/agents/vue-doc.agents.md"
+                          target="_blank"
+                          variant="solid"
+                          color="neutral"
+                          trailing-icon="lucide:external-link"
+                        >
+                          {{ t('ai.agents.sourceFile') }}
+                        </UButton>
+                      </div>
+                    </template>
+                  </UPageCard>
                   
                   <USeparator />
                   
@@ -125,70 +149,36 @@
                 @update:model-value="onStepChange"
               >
                 <template #content="{ item }">
-                  <div class="mt-4 space-y-4 pb-6 px-1">
+                  <div class="mx-auto mt-4 w-full max-w-xl pb-6 px-1">
+                    <UBlogPost
+                      :to="item.to"
+                      :authors="item.authors"
+                      :image="item.image"
+                      target="_blank"
+                      variant="outline"
+                    >
+                      <template #description>
+                        <div class="space-y-4">
+                          <p class="leading-relaxed text-muted">
+                            {{ item.postDescription }}
+                          </p>
 
-                    <!-- Step header (locale-aware) -->
-                    <div>
-                      <p class="font-semibold text-highlighted">{{ item.label }}</p>
-                      <USeparator class="my-2" />
-                      <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">{{ item.detail }}</p>
-                    </div>
-
-                    <!-- Markdown section (constitution / specify / plan) -->
-                    <template v-if="item.markdownUrl !== undefined">
-                      <!-- Real content: fetched + parsed -->
-                      <UScrollArea
-                        v-if="item.markdownUrl && markdownCache[item.key]"
-                        class="h-72 rounded-xl border border-muted px-5 py-3"
-                      >
-                        <MDCRenderer :body="markdownCache[item.key]!.body" :data="markdownCache[item.key]!.data" class="prose dark:prose-invert max-w-none" />
-                      </UScrollArea>
-                      <!-- Loading: URL set but not yet parsed -->
-                      <USkeleton
-                        v-else-if="item.markdownUrl && !markdownCache[item.key]"
-                        class="h-72 rounded-xl"
-                      />
-                      <!-- Placeholder: URL not set yet -->
-                      <div
-                        v-else
-                        class="h-64 rounded-xl border border-dashed border-muted bg-muted/20 flex flex-col items-center justify-center gap-2"
-                      >
-                        <UIcon name="lucide:file-text" class="size-8 opacity-40" />
-                        <p class="text-sm text-muted">{{ t('ai.spec.docComingSoon') }}</p>
-                      </div>
-                    </template>
-
-                    <!-- Implement card (implement step only) -->
-                    <template v-if="item.cardLink !== undefined">
-                      <UCard :ui="{ body: 'p-0', footer: 'px-4 py-3' }">
-                        <div class="aspect-video rounded-t-xl overflow-hidden bg-muted/30">
-                          <img
-                            v-if="item.cardImage"
-                            :src="item.cardImage"
-                             :alt="item.label"
-                            class="w-full h-full object-cover"
-                          />
-                          <div v-else class="w-full h-full flex flex-col items-center justify-center gap-2 text-muted">
-                            <UIcon name="lucide:image" class="size-10 opacity-30" />
-                            <p class="text-xs opacity-50">{{ t('ai.spec.previewComingSoon') }}</p>
-                          </div>
-                        </div>
-                        <template #footer>
-                          <UButton
-                            :to="item.cardLink || '#'"
-                            :disabled="!item.cardLink"
-                            target="_blank"
-                            variant="outline"
-                            size="sm"
-                            leading-icon="lucide:external-link"
+                          <ul
+                            v-if="item.highlights.length"
+                            class="space-y-2 pl-5 text-sm leading-relaxed text-toned"
                           >
-                            {{ t('ai.spec.viewImpl') }}
-                          </UButton>
-                        </template>
-                      </UCard>
-                    </template>
-
+                            <li
+                              v-for="highlight in item.highlights"
+                              :key="highlight"
+                            >
+                              - {{ highlight }}
+                            </li>
+                          </ul>
+                        </div>
+                      </template>
+                    </UBlogPost>
                   </div>
+                  <USeparator />
                 </template>
               </UStepper>
             </div>
@@ -233,7 +223,11 @@
 </template>
 
 <script setup lang="ts">
+import type { UserProps } from '@nuxt/ui'
+
 import { useResumeStore } from '~/stores/resume'
+
+import BetaGhibli from '~/assets/images/Beta-Ghibli.jpeg'
 
 const { t } = useI18n()
 const resumeStore = useResumeStore()
@@ -256,6 +250,16 @@ const agentTabs = [
   { label: 'vue-doc', slot: 'vue-doc', value: 'vue-doc' },
 ]
 
+const specDrivenAuthors: UserProps[] = [
+  {
+    name: 'Oliver Liou',
+    description: 'dashboard-sdd',
+    avatar: {
+      src: BetaGhibli
+    },
+  },
+]
+
 // Spec-driven stepper
 const activeStep = ref(0)
 
@@ -266,34 +270,16 @@ function onStepChange(val: string | number | undefined) {
 // Active agent tab
 const activeAgent = ref('conventional-commits')
 
-// Markdown cache: key → parsed AST (null = loading, undefined = not started)
-const markdownCache = reactive<Record<string, Awaited<ReturnType<typeof parseMarkdown>> | null>>({})
-
-async function fetchStepMarkdown(key: string, url: string) {
-  if (key in markdownCache) return
-  markdownCache[key] = null
-  try {
-    const raw = await $fetch<string>(url)
-    markdownCache[key] = await parseMarkdown(raw)
-  } catch {
-    delete markdownCache[key]
-  }
-}
-
 const stepperItems = computed(() =>
   (ai.value?.specDrivenSteps ?? []).map(step => ({
     title: step.label,
     key: step.key,
     label: step.label,
-    detail: step.description,
-    markdownUrl: step.markdownUrl,
-    cardImage: step.cardImage,
-    cardLink: step.cardLink,
+    postDescription: step.description,
+    highlights: step.highlights ?? [],
+    to: step.markdownUrl || undefined,
+    authors: step.markdownUrl ? specDrivenAuthors : undefined,
+    image: step.image || undefined,
   }))
 )
-
-watch(activeStep, (idx) => {
-  const item = stepperItems.value[idx]
-  if (item?.markdownUrl) fetchStepMarkdown(item.key, item.markdownUrl)
-}, { immediate: true })
 </script>

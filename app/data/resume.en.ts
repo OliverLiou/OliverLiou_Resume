@@ -1,8 +1,19 @@
 import hcmfLogo from '/assets/images/HCMF_SimpleLogo.png'
 import profilePicture from '/assets/images/ProfilePicture.jpg'
 import mustLogo from '/assets/images/MUST_LOGO.png'
+import _01 from '/assets/images/01_constitution.jpg'
+import _02 from '/assets/images/02_specify.jpg'
+import _03 from '/assets/images/03_clarify.jpg'
+import _04 from '/assets/images/04_plan.jpg'
+import _05 from '/assets/images/05_tasks.jpg'
+import _06 from '/assets/images/06_analyze.jpg'
+import _07 from '/assets/images/07_implement.jpg'
+
+
 
 import type { ResumeState } from '~/types/resume'
+
+
 
 export const resumeDataEn: ResumeState = {
   profile: {
@@ -318,43 +329,77 @@ export const resumeDataEn: ResumeState = {
     specDrivenSteps: [
       {
         key: 'constitution',
-        label: 'Constitution',
+        label: 'constitution',
         description: 'Define the fundamental rules and boundaries for AI collaboration across the entire development process.',
-        markdownUrl: '',
+        markdownUrl: 'https://github.com/OliverLiou/dashboard-sdd/blob/master/sdd-docs/constitution.md',
+        image: _01,
+        highlights: [
+          'Project Identity & Architecture',
+          'Dependency Management',
+          'Frontend Engineering & Component Strategy',
+          'Data, State & Type Safety',
+          'QA & Documentation',
+        ],
       },
       {
         key: 'specify',
-        label: 'Specify',
+        label: 'specify',
         description: 'Write structured specifications so both AI and humans clearly understand scope, goals, and acceptance criteria.',
-        markdownUrl: '',
+        markdownUrl: 'https://github.com/OliverLiou/dashboard-sdd/blob/master/sdd-docs/specify.md',
+        image: _02,
+        highlights: [
+          'Header Component Requirements',
+          'Footer Component Requirements',
+          'Sidebar Component Requirements',
+          'Breadcrumb Component Requirements',
+          'Nuxt UI Component Lookup Requirement',
+          'Version Alignment Requirement',
+          'TypeScript Alignment Principle',
+          'Navigation Menu Generation',
+          'NavigationItem Submenu Support',
+          'Theme Switching',
+          'Copyright Year and Plugin Injection',
+          'Layout File Location Requirement',
+          'app.vue Composition Requirement',
+        ],
       },
       {
         key: 'clarify',
-        label: 'Clarify',
+        label: 'clarify',
         description: 'Resolve ambiguities through structured Q&A to align understanding before moving forward.',
+        image: _03,
       },
       {
         key: 'plan',
-        label: 'Plan',
+        label: 'plan',
         description: 'Generate a concrete implementation plan with ordered steps, technical decisions, and expected deliverables.',
-        markdownUrl: '',
+        markdownUrl: 'https://github.com/OliverLiou/dashboard-sdd/blob/master/sdd-docs/plan.md',
+        image: _04,
+        highlights: [
+          'Objective',
+          'Template Reference',
+          'Layout Structure',
+          'Component Specs',
+          'Technical Constraints',
+        ],
       },
       {
         key: 'tasks',
-        label: 'Tasks',
+        label: 'tasks',
         description: 'Break the plan into independent, trackable task units for incremental execution and verification.',
+        image: _05,
       },
       {
         key: 'analyze',
-        label: 'Analyze',
+        label: 'analyze',
         description: 'Analyze existing code structure and dependencies to ensure implementation aligns with the current architecture.',
+        image: _06,
       },
       {
         key: 'implement',
-        label: 'Implement',
+        label: 'implement',
         description: 'Deliver the actual implementation with AI-assisted coding and human review. View the live result directly.',
-        cardImage: '',
-        cardLink: '',
+        image: _07,
       },
     ],
     knowledgeTopics: [

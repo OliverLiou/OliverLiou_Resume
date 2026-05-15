@@ -99,12 +99,9 @@ export interface AiSpecStep {
   key: string
   label: string
   description: string
-  /** '' = show placeholder; actual URL = fetch & render via MDCRenderer; undefined = no markdown section */
   markdownUrl?: string
-  /** implement step: thumbnail image URL ('' = image placeholder) */
-  cardImage?: string
-  /** implement step: external link URL ('' = link placeholder) */
-  cardLink?: string
+  highlights?: string[]
+  image?: string
 }
 
 export interface AiKnowledgeTopic {
