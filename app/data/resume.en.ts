@@ -300,12 +300,12 @@ export const resumeDataEn: ResumeState = {
         ],
       },
       {
-        title: 'AI Productivity',
+        title: 'Prompt Engineering',
         icon: 'lucide:sparkles',
         items: [
-          'Uses AI for document organization, article and video summarization, and key point extraction to accelerate knowledge absorption.',
-          'Leverages AI to assist with presentation structure planning, content polishing, and visual asset generation to enhance proposal quality.',
-          'Possesses AI image generation capabilities, producing visual assets based on contextual requirements.',
+          'Design prompt structures according to task types.',
+          'Create prompts with clear "output formats" and "boundary conditions".',
+          'Use AI to refine and enhance prompts, transforming colloquial text into more precise versions.',
         ],
       },
     ],
