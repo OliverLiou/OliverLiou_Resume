@@ -66,6 +66,10 @@
       "conventionalCommitsDesc": "依照 Conventional Commits 1.0.0 規範自動生成標準化的 Git commit 訊息，助力語意化版本控制、自動化 changelog 產出，讓專案歷程清晰且易於機器解析。",
       "vueDocDesc": "分析 Vue/Nuxt 檔案邏輯並產出標準化的技術Markdown文件 "
     },
+    "stepper": {
+      "prev": "上一步",
+      "next": "下一步"
+    },
     "spec": {
       "artifact": "Artifact",
       "viewImpl": "查看成品",

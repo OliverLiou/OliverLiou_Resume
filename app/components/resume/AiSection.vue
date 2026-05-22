@@ -149,6 +149,28 @@
                 @update:model-value="onStepChange"
               >
                 <template #content="{ item }">
+                  <!-- Step controls -->
+                  <div class="flex justify-center gap-3 mt-4 mb-2">
+                    <UButton
+                      icon="lucide:arrow-left"
+                      variant="outline"
+                      color="neutral"
+                      :disabled="activeStep === 0"
+                      @click="prevStep"
+                    >
+                      {{ t('ai.stepper.prev') }}
+                    </UButton>
+                    <UButton
+                      trailing-icon="lucide:arrow-right"
+                      variant="outline"
+                      color="neutral"
+                      :disabled="activeStep >= stepperItems.length - 1"
+                      @click="nextStep"
+                    >
+                      {{ t('ai.stepper.next') }}
+                    </UButton>
+                  </div>
+
                   <div class="mx-auto mt-4 w-full max-w-xl pb-6 px-1">
                     <UBlogPost
                       :to="item.to"
@@ -265,6 +287,14 @@ const activeStep = ref(0)
 
 function onStepChange(val: string | number | undefined) {
   if (typeof val === 'number') activeStep.value = val
+}
+
+function prevStep() {
+  if (activeStep.value > 0) activeStep.value--
+}
+
+function nextStep() {
+  if (activeStep.value < stepperItems.value.length - 1) activeStep.value++
 }
 
 // Active agent tab

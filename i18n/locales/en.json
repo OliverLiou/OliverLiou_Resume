@@ -66,6 +66,10 @@
       "conventionalCommitsDesc": "Generates standardized Git commit messages following the Conventional Commits 1.0.0 spec — enabling semantic versioning, automated changelogs, and a clear, machine-readable project history.",
       "vueDocDesc": "Analyzes Vue/Nuxt file logic and generates standardized technical Markdown documentation."
     },
+    "stepper": {
+      "prev": "Previous",
+      "next": "Next"
+    },
     "spec": {
       "artifact": "Artifact",
       "viewImpl": "View Implementation",
